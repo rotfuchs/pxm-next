@@ -1,0 +1,55 @@
+/* ------------------------------------------------------
+ * /css/faq/_faq_index.scss START
+ * ------------------------------------------------------ */
+
+.faqContainer {
+  margin:  0 8px;
+}
+
+.faqContainer .headline1 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.faqContainer .category {
+  padding-bottom: 40px;
+}
+
+.faqContainer .category .headline2 {
+  background-color: #8f1425;
+  border: 1px solid #C01425;
+  padding: 22px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+
+.faqContainer .headline3 {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  color: #ffff7c;
+  background-color: #A51425;
+}
+
+.faqContainer .topic {
+  background-color: #8f1425;
+}
+
+.faqContainer .topic .content {
+  border: 1px solid #C01425;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.faqContainer .topic .content ul {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+/* ------------------------------------------------------
+ * /css/faq/_faq_index.scss START
+ * ------------------------------------------------------ */

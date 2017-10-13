@@ -1,0 +1,28 @@
+/* ------------------------------------------------------
+ * /css/frameset/classic_frameset.scss START
+ * ------------------------------------------------------ */
+
+.classicFrameset .threadViewContainer {
+  border: 2px solid black;
+  box-sizing: border-box;
+  height: 35vh;
+  overflow: auto;
+}
+
+.classicFrameset .postTreeContainer {
+  border: 2px solid red;
+  box-sizing: border-box;
+  height: 26vh;
+  overflow: auto;
+}
+
+.classicFrameset .postContainer {
+  border: 2px solid green;
+  box-sizing: border-box;
+  height: 39vh;
+  overflow: auto;
+}
+
+/* ------------------------------------------------------
+ * /css/frameset/classic_frameset.scss STOP
+ * ------------------------------------------------------ */
