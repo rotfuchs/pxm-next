@@ -3,25 +3,36 @@
  * ------------------------------------------------------ */
 
 .classicFrameset .threadViewContainer {
-  border: 2px solid black;
+  border-bottom: 2px solid black;
   box-sizing: border-box;
   height: 35vh;
+}
+
+.classicFrameset .threadViewContainer .content {
+  height: 100%;
   overflow: auto;
 }
 
+.classicFrameset .threadViewContainer .border {
+  background-color: black;
+  height: 2px;
+  cursor: ns-resize;
+}
+
 .classicFrameset .postTreeContainer {
-  border: 2px solid red;
+  //border: 2px solid red;
   box-sizing: border-box;
   height: 26vh;
   overflow: auto;
 }
 
 .classicFrameset .postContainer {
-  border: 2px solid green;
+  border-top: 2px solid green;
   box-sizing: border-box;
   height: 39vh;
   overflow: auto;
 }
+
 
 /* ------------------------------------------------------
  * /css/frameset/classic_frameset.scss STOP

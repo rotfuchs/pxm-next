@@ -126,15 +126,24 @@ body {
  * ------------------------------------------------------ */
 
 .classicFrameset .threadViewContainer {
-  border: 2px solid black;
+  border-bottom: 2px solid black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 35vh;
+}
+
+.classicFrameset .threadViewContainer .content {
+  height: 100%;
   overflow: auto;
 }
 
+.classicFrameset .threadViewContainer .border {
+  background-color: black;
+  height: 2px;
+  cursor: ns-resize;
+}
+
 .classicFrameset .postTreeContainer {
-  border: 2px solid red;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 26vh;
@@ -142,7 +151,7 @@ body {
 }
 
 .classicFrameset .postContainer {
-  border: 2px solid green;
+  border-top: 2px solid green;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 39vh;
@@ -151,5 +160,51 @@ body {
 
 /* ------------------------------------------------------
  * /css/frameset/classic_frameset.scss STOP
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
+ * /css/frameset/advanced_frameset.scss START
+ * ------------------------------------------------------ */
+
+.advancedFrameset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.advancedFrameset .sidebar,
+.advancedFrameset .content {
+  width: 100vh;
+}
+
+.advancedFrameset .threadViewContainer {
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  width: 50vw;
+}
+
+.advancedFrameset .postTreeContainer {
+  border: 2px solid red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 50vh;
+  overflow: auto;
+  width: 50vw;
+}
+
+.advancedFrameset .postContainer {
+  border: 2px solid green;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 50vh;
+  overflow: auto;
+  width: 50vw;
+}
+
+/* ------------------------------------------------------
+ * /css/frameset/advanced_frameset.scss STOP
  * ------------------------------------------------------ */
 

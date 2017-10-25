@@ -9,4 +9,9 @@ class TestController extends Controller
     {
         return view('test.test');
     }
+
+    public function test2()
+    {
+        return view('test.test2');
+    }
 }

@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/test', 'TestController@test');
+Route::get('/test2', 'TestController@test2');
 
 Route::get('/boards', 'BoardController@getBoardListView');
 Route::get('/faq', 'FaqController@getFaqIndexView');

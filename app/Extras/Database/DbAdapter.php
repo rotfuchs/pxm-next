@@ -2,6 +2,7 @@
 
 namespace App\Extras\Database;
 
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
 class DbAdapter
@@ -23,13 +24,17 @@ class DbAdapter
     }
 
     /**
-     * @param $statement
-     * @param Model $classDefinition
+     * @param \Illuminate\Database\Query\Builder|string $statement
+     * @param string $classDefinition
      *
      * @return array
      */
-    public function fetchAll($statement, Model $classDefinition)
+    public function fetchAll($statement, $classDefinition)
     {
+        if($statement instanceof Builder) {
+            return $classDefinition::hydrate($statement->get()->toArray());
+        }
+
         $std = $this->pdo->prepare($statement);
         $std->execute();
 

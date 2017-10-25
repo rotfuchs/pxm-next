@@ -2,6 +2,7 @@
 
 namespace App\Services\Faq\Repository;
 
+use App\Extras\Message\MessageCollector;
 use App\Services\Faq\Model\FaqCategory;
 use App\Services\Faq\Model\FaqTopic;
 use App\Services\Faq\Repository\Filter\FaqCategoryFilter;
@@ -11,15 +12,17 @@ use Illuminate\Support\Facades\DB;
 class FaqRepository {
 
     private $pdo;
+    private $messageCollector;
 
     public function __construct()
     {
         $this->pdo = DB::getPdo();
+        $this->messageCollector = new MessageCollector();
     }
 
     /**
      * @param FaqCategoryFilter $filter
-     * @return FaqCategory[]
+     * @return FaqCategory[]|false
      */
     public function filterCategories(FaqCategoryFilter $filter)
     {
@@ -35,13 +38,15 @@ class FaqRepository {
             return $std->fetchAll(\PDO::FETCH_CLASS, FaqCategory::class);
 
         } catch(\Exception $e) {
+            $this->messageCollector->writeError($e->getMessage());
 
+            return false;
         }
     }
 
     /**
      * @param FaqTopicFilter $filter
-     * @return FaqTopic[]
+     * @return FaqTopic[]|false
      */
     public function filterTopics(FaqTopicFilter $filter)
     {
@@ -54,7 +59,9 @@ class FaqRepository {
             return $std->fetchAll(\PDO::FETCH_CLASS, FaqTopic::class);
 
         } catch(\Exception $e) {
+            $this->messageCollector->writeError($e->getMessage());
 
+            return false;
         }
     }
 }
