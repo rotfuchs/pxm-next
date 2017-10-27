@@ -6,6 +6,7 @@ use App\Extras\Database\Model;
 
 class Board extends Model
 {
+    public $id;
     public $name;
     public $description;
     public $position;

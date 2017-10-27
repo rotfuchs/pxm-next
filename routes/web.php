@@ -21,3 +21,5 @@ Route::get('/test2', 'TestController@test2');
 
 Route::get('/boards', 'BoardController@getBoardListView');
 Route::get('/faq', 'FaqController@getFaqIndexView');
+
+Route::get('/user/id/{user_id}', 'UserController@getUserView');

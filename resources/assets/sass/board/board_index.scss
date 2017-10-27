@@ -2,7 +2,20 @@
  * /css/board/board_index.css START
  * ------------------------------------------------------ */
 
+table.default td.mods {
+  background-color: #8f1425;
+  text-align: center;
+  font-weight: bold;
+}
 
+table.default a.name {
+  font-size: small;
+  font-weight: bold;
+}
+
+table.default td.lastMsg {
+  text-align: center;
+}
 
 /* ------------------------------------------------------
  * /css/board/board_index.css END

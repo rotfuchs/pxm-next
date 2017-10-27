@@ -14,6 +14,18 @@ body {
   font-size: 10px;
 }
 
+a,
+a:visited,
+a:active {
+  color: #ffff7c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .wrapper {
   min-height: 100vh;
   border-right: 1px solid #ffffff;
@@ -59,8 +71,53 @@ body {
  * ------------------------------------------------------ */
 
 /* ------------------------------------------------------
+ * /css/layout/_table.scss START
+ * ------------------------------------------------------ */
+
+table.default {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.default thead {
+  background-color: #8f1425;
+  color: #ffff7c;
+  line-height: normal;
+}
+
+table.default tbody {
+  background-color: #a51425;
+}
+
+table.default th,
+table.default td {
+  padding: 5px;
+  font-size: x-small;
+  border: 1px solid #c01425;
+}
+
+/* ------------------------------------------------------
+ * /css/layout/_table.scss END
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
  * /css/board/board_index.css START
  * ------------------------------------------------------ */
+
+table.default td.mods {
+  background-color: #8f1425;
+  text-align: center;
+  font-weight: bold;
+}
+
+table.default a.name {
+  font-size: small;
+  font-weight: bold;
+}
+
+table.default td.lastMsg {
+  text-align: center;
+}
 
 /* ------------------------------------------------------
  * /css/board/board_index.css END
@@ -119,6 +176,74 @@ body {
 
 /* ------------------------------------------------------
  * /css/faq/_faq_index.scss START
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
+ * /css/user/_profile.scss START
+ * ------------------------------------------------------ */
+
+div.userprofile.headline {
+  text-align: center;
+  color: #ffff7c;
+  font-size: medium;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+div.userprofile.headline span {
+  color: #ffffff;
+}
+
+table.userprofile tbody.general tr:nth-child(odd) {
+  background-color: #8f1425;
+}
+
+table.userprofile tbody.games tr:nth-child(even),
+table.userprofile tbody.movies tr:nth-child(even) {
+  background-color: #8f1425;
+}
+
+table.userprofile th {
+  white-space: nowrap;
+}
+
+table.userprofile .secondLabel {
+  width: 1%;
+}
+
+table.userprofile .secondLabel span {
+  padding-left: 10px;
+}
+
+table.userprofile th,
+table.userprofile td {
+  font-size: small;
+}
+
+table.userprofile .avatar {
+  text-align: center;
+}
+
+table.userprofile .avatar img {
+  max-width: 120px;
+  max-height: 140px;
+}
+
+table.userprofile tbody th {
+  text-align: right;
+}
+
+table.userprofile tfoot td {
+  text-align: center;
+  background-color: #8f1425;
+}
+
+table.userprofile tfoot span.label {
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------
+ * /css/user/_profile.scss END
  * ------------------------------------------------------ */
 
 /* ------------------------------------------------------

@@ -1,0 +1,29 @@
+/* ------------------------------------------------------
+ * /css/layout/_table.scss START
+ * ------------------------------------------------------ */
+
+table.default {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.default thead {
+  background-color: #8f1425;
+  color: #ffff7c;
+  line-height: normal;
+}
+
+table.default tbody {
+  background-color: #a51425;
+}
+
+table.default th,
+table.default td {
+  padding: 5px;
+  font-size: x-small;
+  border: 1px solid #c01425;
+}
+
+/* ------------------------------------------------------
+ * /css/layout/_table.scss END
+ * ------------------------------------------------------ */

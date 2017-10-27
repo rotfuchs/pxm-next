@@ -2,10 +2,13 @@
 
 namespace App\Services\User\Model;
 
-class User {
+use App\Extras\Database\Model;
+
+class User extends Model
+{
     protected $tableName = 'pxm_user';
 
-    public $user_id;
+    public $id;
     public $nickname;
     public $password;
     public $passwordkey;
@@ -64,4 +67,9 @@ class User {
     public $profile_xbl;
     public $profile_psn;
     public $profile_wii;
+
+    public function getFullName()
+    {
+        return $this->firstname .' '. $this->lastname;
+    }
 }

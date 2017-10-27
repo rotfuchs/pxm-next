@@ -1,0 +1,1 @@
+<a href="/user/id/{{$id}}" target="_blank" data-id="{{$id}}">{{$username}}</a>

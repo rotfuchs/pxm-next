@@ -1,0 +1,67 @@
+/* ------------------------------------------------------
+ * /css/user/_profile.scss START
+ * ------------------------------------------------------ */
+
+div.userprofile.headline {
+  text-align: center;
+  color: #ffff7c;
+  font-size: medium;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+div.userprofile.headline span {
+  color: #ffffff;
+}
+
+table.userprofile tbody.general tr:nth-child(odd) {
+  background-color: #8f1425;
+}
+
+table.userprofile tbody.games tr:nth-child(even),
+table.userprofile tbody.movies tr:nth-child(even) {
+  background-color: #8f1425;
+}
+
+table.userprofile th {
+  white-space: nowrap;
+}
+
+table.userprofile .secondLabel {
+  width: 1%;
+}
+
+table.userprofile .secondLabel span {
+  padding-left: 10px;
+}
+
+table.userprofile th,
+table.userprofile td {
+  font-size: small;
+}
+
+table.userprofile .avatar {
+  text-align: center;
+}
+
+table.userprofile .avatar img {
+  max-width: 120px;
+  max-height: 140px;
+}
+
+table.userprofile tbody th {
+  text-align: right;
+}
+
+table.userprofile tfoot td {
+  text-align: center;
+  background-color: #8f1425;
+}
+
+table.userprofile tfoot span.label {
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------
+ * /css/user/_profile.scss END
+ * ------------------------------------------------------ */

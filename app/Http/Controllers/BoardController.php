@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
+use App\Services\Board\View\BoardIndexTableRowView;
 
 class BoardController extends Controller
 {
@@ -19,9 +20,17 @@ class BoardController extends Controller
     {
         $filter = new BoardFilter();
         $filter->active = 1;
-        $boards = $this->boardQueryService->filter($filter);
+        $boards = [];
 
-        return view('board.list', []);
+        foreach($this->boardQueryService->filter($filter) as $board) {
+            $tableRowView = new BoardIndexTableRowView();
+            $tableRowView->setBoard($board);
+
+            $boards[] = $tableRowView;
+        }
+
+
+        return view('board.index', ['boards' => $boards]);
     }
 
 }

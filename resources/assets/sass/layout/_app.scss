@@ -14,6 +14,16 @@ body {
   font-size: 10px;
 }
 
+a, a:visited, a:active {
+  color: #ffff7c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .wrapper {
   min-height: 100vh;
   border-right: 1px solid #ffffff;

@@ -15,4 +15,9 @@ abstract class View
     {
         return call_user_func('get_object_vars', $this);
     }
+
+    public function __toString()
+    {
+        return $this->toView().'';
+    }
 }
