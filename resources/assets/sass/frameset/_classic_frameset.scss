@@ -3,24 +3,17 @@
  * ------------------------------------------------------ */
 
 .classicFrameset .threadViewContainer {
-  border-bottom: 2px solid #cccccc;
   box-sizing: border-box;
   height: 35vh;
-}
-
-.classicFrameset .threadViewContainer .content {
-  height: 100%;
+  min-height: 35vh;
   overflow: auto;
 }
 
-.classicFrameset .threadViewContainer .border {
-  height: 2px;
-  cursor: ns-resize;
-}
-
 .classicFrameset .postTreeContainer {
+  border-top: 2px solid #cccccc;
   box-sizing: border-box;
   height: 26vh;
+  min-height: 26vh;
   overflow: auto;
 }
 
@@ -28,9 +21,17 @@
   border-top: 2px solid #cccccc;
   box-sizing: border-box;
   height: 39vh;
+  min-height: 39vh;
   overflow: auto;
 }
 
+.classicFrameset .threadViewContainer .wrapper,
+.classicFrameset .postTreeContainer .wrapper,
+.classicFrameset .postContainer .wrapper {
+  min-height: inherit;
+  height: auto;
+  margin-top: -2px;
+}
 
 /* ------------------------------------------------------
  * /css/frameset/classic_frameset.scss STOP

@@ -1,0 +1,23 @@
+/* ------------------------------------------------------
+ * /css/layout/_content.scss START
+ * ------------------------------------------------------ */
+
+div.defaultHeader {
+  height: 30px;
+  padding: 4px;
+  border: 1px solid #c01425;
+  box-sizing: border-box;
+  font-size: small;
+  font-weight: bold;
+  line-height: 20px;
+
+  background: #b32537;
+  background: -moz-linear-gradient(top, #b32537 0%, #8c1e2f 4%, #952031 12%, #982132 42%, #ab2435 62%, #bb2638 85%, #b92537 88%, #a41b2d 92%, #8e1929 96%, #b41d2f 100%);
+  background: -webkit-linear-gradient(top, #b32537 0%,#8c1e2f 4%,#952031 12%,#982132 42%,#ab2435 62%,#bb2638 85%,#b92537 88%,#a41b2d 92%,#8e1929 96%,#b41d2f 100%);
+  background: linear-gradient(to bottom, #b32537 0%,#8c1e2f 4%,#952031 12%,#982132 42%,#ab2435 62%,#bb2638 85%,#b92537 88%,#a41b2d 92%,#8e1929 96%,#b41d2f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b32537', endColorstr='#b41d2f',GradientType=0 );
+}
+
+/* ------------------------------------------------------
+ * /css/layout/_content.scss END
+ * ------------------------------------------------------ */

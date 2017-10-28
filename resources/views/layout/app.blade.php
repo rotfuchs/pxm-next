@@ -17,12 +17,14 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <div class="header">
-                <div class="banner"></div>
-                <div class="top-navigation">registrierung | passwort vergessen? | faq | online? | tm+7</div>
+        <div class="singlePage">
+            <div class="wrapper">
+                <div class="header">
+                    <div class="banner"></div>
+                    <div class="top-navigation">registrierung | passwort vergessen? | faq | online? | tm+7</div>
+                </div>
+                @yield('content')
             </div>
-            @yield('content')
         </div>
     </body>
 </html>

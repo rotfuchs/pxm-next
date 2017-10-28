@@ -10440,14 +10440,23 @@ function initClassicFrameset() {
 
         // update the element's style
         // target.style.width  = event.rect.width + 'px';
-        target.style.height = threadViewHeight + 'vh';
-        postTreeContainerEl.style.height = postTreeHeight + 'vh';
+        // target.style.height = threadViewHeight + 'vh';
+        $(target).css('height', threadViewHeight + 'vh').css('min-height', threadViewHeight + 'vh');
+
+        // postTreeContainerEl.style.height = postTreeHeight + 'vh';
+        $(postTreeContainerEl).css('height', postTreeHeight + 'vh').css('min-height', postTreeHeight + 'vh');
+
+        // $('.threadViewContainer').find('.wrapper').css('height', threadViewHeight + 'vh');
+        // $('.postTreeContainer').find('.wrapper').css('min-height', postTreeHeight + 'vh');
+        // $('.postContainer').find('.wrapper').css('min-height', postHeight + 'vh');
 
         // translate when resizing from top or left edges
         x += event.deltaRect.left;
         y += event.deltaRect.top;
 
-        target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+        // target.style.webkitTransform = target.style.transform =
+        //     'translate(' + x + 'px,' + y + 'px)';
+
 
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
@@ -10472,8 +10481,15 @@ function initClassicFrameset() {
 
         // update the element's style
         // target.style.width  = event.rect.width + 'px';
-        target.style.height = postViewHeight + 'vh';
-        postTreeContainerEl.style.height = postTreeHeight + 'vh';
+        // target.style.height = postViewHeight + 'vh';
+        $(target).css('height', postViewHeight + 'vh').css('min-height', postViewHeight + 'vh');
+
+        // postTreeContainerEl.style.height = postTreeHeight + 'vh';
+        $(postTreeContainerEl).css('height', postTreeHeight + 'vh').css('min-height', postTreeHeight + 'vh');
+
+        // $('.threadViewContainer').find('.wrapper').css('height', threadHeight + 'vh');
+        // $('.postTreeContainer').find('.wrapper').css('min-height', postTreeHeight + 'vh');
+        // $('.postContainer').find('.wrapper').css('min-height', postViewHeight + 'vh');
 
         // translate when resizing from top or left edges
         x += event.deltaRect.left;

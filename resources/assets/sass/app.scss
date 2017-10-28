@@ -11,9 +11,12 @@
 @import "layout/app";
 @import "layout/navigation";
 @import "layout/table";
+@import "layout/content";
 @import "board/board_index";
 @import "board/board_view";
 @import "thread/thread_list";
+@import "message/tree_view";
+@import "message/message_view";
 @import "faq/faq_index";
 @import "user/profile";
 @import "frameset/classic_frameset";

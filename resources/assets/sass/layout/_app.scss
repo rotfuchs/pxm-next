@@ -25,13 +25,18 @@ a:hover {
 }
 
 .wrapper {
-  min-height: 100vh;
+  box-sizing: border-box;
   border-right: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   background-color: #A51425;
-  box-shadow: 10px 0 75px -2px #000000;
+  box-shadow: 20px 0 75px -10px #000000;
   display: block;
   width: 778px;
+  //height: 100vh;
+}
+
+.singlePage .wrapper {
+  height: 100vh;
 }
 
 /* ------------------------------------------------------

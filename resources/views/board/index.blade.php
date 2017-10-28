@@ -3,6 +3,7 @@
 @section('title', trans('board.title'))
 
 @section('content')
+    <div class="defaultHeader"></div>
     <table class="default" id="boardTable">
         <thead>
         <tr>

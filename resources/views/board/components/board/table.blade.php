@@ -1,3 +1,4 @@
+<div class="defaultHeader"></div>
 <table class="default threads">
     <thead>
         <tr>
@@ -15,4 +16,14 @@
             {!! $tableRowView !!}
         @endforeach
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" class="info">
+                Thread-Index: <span class="category">Spielefront</span>
+            </td>
+            <td colspan="4" class="navigation">
+                Ältere Threads anzeigen
+            </td>
+        </tr>
+    </tfoot>
 </table>

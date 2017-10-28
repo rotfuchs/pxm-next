@@ -2,6 +2,10 @@
  * /css/thread/thread_list.css START
  * ------------------------------------------------------ */
 
+.threadViewContainer .defaultHeader {
+  border-bottom: 0;
+}
+
 table.threads thead th {
   color: #ffffff;
   font-size: x-small;
@@ -44,6 +48,24 @@ table.threads td.author a,
 table.threads .lastMsg a,
 table.threads .replyCount a {
   color: #ffffff;
+}
+
+table.threads tfoot td {
+  background-color: #8f1425;
+  font-weight: bold;
+  padding: 5px;
+}
+
+table.threads tfoot td.navigation {
+  text-align: right;
+}
+
+table.threads tfoot td.info {
+  font-size: 10pt;
+}
+
+table.threads tfoot td.info span.category {
+  color: #ffff7c;
 }
 
 /* ------------------------------------------------------

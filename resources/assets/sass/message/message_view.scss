@@ -1,0 +1,79 @@
+/* ------------------------------------------------------
+ * /css/message/message_view.css START
+ * ------------------------------------------------------ */
+
+div.message .defaultHeader {
+  display: flex;
+}
+
+div.message div.topic {
+  padding-left: 10px;
+  flex: 1;
+}
+
+div.message .created {
+ padding-right: 10px;
+}
+
+div.message .topic span,
+div.message .created span {
+  font-weight: normal;
+}
+
+div.message .replyInfo,
+div.message .messageFoot {
+  padding: 4px 14px;
+  font-size: small;
+  font-weight: bold;
+  background-color: #8f1425;
+  border: 1px solid #c01425;
+}
+
+div.message .replyInfo {
+  border-top: 0;
+}
+
+div.message .messageFoot {
+  text-align: right;
+  line-height: 20px;
+}
+
+div.message .replyInfo a,
+div.message .replyInfo span {
+  font-weight: normal;
+}
+
+div.message div.content {
+  display: flex;
+  border-right: 1px solid #c01425;
+}
+
+div.message div.content .userInfo {
+  background-color: #8f1425;
+  border-right: 1px solid #c01425;
+  border-left: 1px solid #c01425;
+  width: 160px;
+  padding: 4px;
+}
+
+div.message div.content .userInfo .userName {
+  padding-top: 2px;
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
+}
+
+div.message div.content .messageBody {
+  font-family: Courier New,Courier, monospace;
+  flex: 1;
+  padding: 10px;
+  font-size: 10pt;
+}
+
+div.messageBody span.quote {
+  color: #f0888a;
+}
+
+/* ------------------------------------------------------
+ * /css/message/message_view.css END
+ * ------------------------------------------------------ */
