@@ -18,7 +18,12 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+try {
+    window.$ = window.jQuery = require('jquery');
+} catch (e) {}
+
 window.Frameset = require('./frameset/Frameset.js');
+window.Board = require('./components/board/board_index.js');
 
 // Vue.component('faq-topic-item', require('./components/ExampleComponent.vue'));
 

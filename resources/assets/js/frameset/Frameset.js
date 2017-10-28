@@ -87,5 +87,5 @@ export function initClassicFrameset()
 
 export function initAdvancedFrameset()
 {
-
+    console.log('bla');
 }

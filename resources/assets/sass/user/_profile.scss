@@ -2,6 +2,18 @@
  * /css/user/_profile.scss START
  * ------------------------------------------------------ */
 
+div.profilePopupContainer {
+  background-color: #A51425;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 20px 0 20px;
+  box-sizing: border-box;
+}
+
+div.profilePopupContainer table {
+  min-width: 600px;
+}
+
 div.userprofile.headline {
   text-align: center;
   color: #ffff7c;

@@ -20,6 +20,8 @@ Route::get('/test', 'TestController@test');
 Route::get('/test2', 'TestController@test2');
 
 Route::get('/boards', 'BoardController@getBoardListView');
+Route::get('/board/id/{id}', 'BoardController@getBoardView');
 Route::get('/faq', 'FaqController@getFaqIndexView');
 
+Route::get('/user/id/{user_id}/layout/{layout}', 'UserController@getUserView');
 Route::get('/user/id/{user_id}', 'UserController@getUserView');

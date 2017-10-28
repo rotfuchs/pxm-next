@@ -16,7 +16,7 @@ class UserController extends Controller
         $this->userQueryService = $userQueryService;
     }
 
-    public function getUserView($user_id)
+    public function getUserView($user_id, $layout = false)
     {
         $user = $this->userQueryService->getSingle($user_id);
 
@@ -25,6 +25,9 @@ class UserController extends Controller
 
         $userProfileView = new UserProfileView();
         $userProfileView->setUser($user);
+
+        if($layout=='new_window')
+            $userProfileView->layout = 'layout.user.profile';
 
         return $userProfileView->toView();
     }

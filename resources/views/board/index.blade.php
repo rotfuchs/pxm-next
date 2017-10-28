@@ -3,7 +3,7 @@
 @section('title', trans('board.title'))
 
 @section('content')
-    <table class="default">
+    <table class="default" id="boardTable">
         <thead>
         <tr>
             <th>Rubrik</th>
@@ -19,4 +19,10 @@
             @endforeach
         </tbody>
     </table>
+
+    <script>
+        window.onload = function () {
+            Board.initEvents();
+        };
+    </script>
 @endsection

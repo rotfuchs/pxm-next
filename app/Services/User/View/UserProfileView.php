@@ -28,6 +28,7 @@ class UserProfileView extends View
     public $favoriteMovies;
     public $dvdProfilerLink;
     public $lastProfileUpdateDateTime;
+    public $layout = 'layout.app';
 
 
     protected $viewName = 'user.profile';

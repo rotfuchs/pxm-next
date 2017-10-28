@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-        {{--<script src="{{ mix('/js/app.js') }}"></script>--}}
+        <script src="{{ mix('/js/app.js') }}"></script>
 
 
         <title>@yield('title') - pxm board</title>

@@ -124,6 +124,66 @@ table.default td.lastMsg {
  * ------------------------------------------------------ */
 
 /* ------------------------------------------------------
+ * /css/board/board_view.css START
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
+ * /css/board/board_view.css END
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
+ * /css/thread/thread_list.css START
+ * ------------------------------------------------------ */
+
+table.threads thead th {
+  color: #ffffff;
+  font-size: x-small;
+  padding: 4px;
+}
+
+table.threads td {
+  padding: 3px;
+}
+
+table.threads td.author,
+table.threads td.viewCount,
+table.threads td.replyCount {
+  background-color: #8f1425;
+  font-weight: bold;
+}
+
+table.threads .createdDate,
+table.threads .lastMsg {
+  font-size: 7pt;
+}
+
+table.threads .createdDate,
+table.threads .lastMsg,
+table.threads .viewCount,
+table.threads .replyCount {
+  text-align: center;
+}
+
+table.threads td.topic a {
+  font-size: 10pt;
+}
+
+table.threads td.topic a.fixed {
+  color: #ffff7c;
+}
+
+table.threads td.topic a,
+table.threads td.author a,
+table.threads .lastMsg a,
+table.threads .replyCount a {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------
+ * /css/thread/thread_list.css END
+ * ------------------------------------------------------ */
+
+/* ------------------------------------------------------
  * /css/faq/_faq_index.scss START
  * ------------------------------------------------------ */
 
@@ -181,6 +241,19 @@ table.default td.lastMsg {
 /* ------------------------------------------------------
  * /css/user/_profile.scss START
  * ------------------------------------------------------ */
+
+div.profilePopupContainer {
+  background-color: #A51425;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 20px 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.profilePopupContainer table {
+  min-width: 600px;
+}
 
 div.userprofile.headline {
   text-align: center;
@@ -251,7 +324,7 @@ table.userprofile tfoot span.label {
  * ------------------------------------------------------ */
 
 .classicFrameset .threadViewContainer {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #cccccc;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 35vh;
@@ -263,7 +336,6 @@ table.userprofile tfoot span.label {
 }
 
 .classicFrameset .threadViewContainer .border {
-  background-color: black;
   height: 2px;
   cursor: ns-resize;
 }
@@ -276,7 +348,7 @@ table.userprofile tfoot span.label {
 }
 
 .classicFrameset .postContainer {
-  border-top: 2px solid green;
+  border-top: 2px solid #cccccc;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 39vh;

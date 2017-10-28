@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends($layout)
 
 @section('title', trans('user.profile'))
 

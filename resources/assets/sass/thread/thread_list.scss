@@ -1,0 +1,51 @@
+/* ------------------------------------------------------
+ * /css/thread/thread_list.css START
+ * ------------------------------------------------------ */
+
+table.threads thead th {
+  color: #ffffff;
+  font-size: x-small;
+  padding: 4px;
+}
+
+table.threads td {
+  padding: 3px;
+}
+
+table.threads td.author,
+table.threads td.viewCount,
+table.threads td.replyCount {
+  background-color: #8f1425;
+  font-weight: bold;
+}
+
+table.threads .createdDate,
+table.threads .lastMsg {
+  font-size: 7pt;
+}
+
+table.threads .createdDate,
+table.threads .lastMsg,
+table.threads .viewCount,
+table.threads .replyCount {
+  text-align: center;
+}
+
+table.threads td.topic a {
+  font-size: 10pt;
+}
+
+table.threads td.topic a.fixed {
+  color: #ffff7c;
+}
+
+table.threads td.topic a,
+table.threads td.author a,
+table.threads .lastMsg a,
+table.threads .replyCount a {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------
+ * /css/thread/thread_list.css END
+ * ------------------------------------------------------ */

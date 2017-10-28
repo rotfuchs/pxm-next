@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
 use App\Services\Board\View\BoardIndexTableRowView;
+use App\Services\Board\View\BoardThreadListView;
 
 class BoardController extends Controller
 {
@@ -31,6 +32,16 @@ class BoardController extends Controller
 
 
         return view('board.index', ['boards' => $boards]);
+    }
+
+    public function getBoardView($id)
+    {
+        $boardThreadListView = new BoardThreadListView();
+        $boardThreadListView->setBoardId($id);
+
+        return view('board.board', [
+            'threadList' => $boardThreadListView
+        ]);
     }
 
 }
