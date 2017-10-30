@@ -36,17 +36,17 @@ class Message extends Model
             'content' => '$1'
         ],
         'url' => [
-            'pattern' => '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/',
-            'replace' => '<a href="$0" target="_blank">$0</a>',
+            'pattern' => '/\[((http|https|ftp|ftps)\:\/\/.*?)\]/s',
+            'replace' => '[<a href="$1" target="_blank">$1</a>]',
             'content' => '$1'
         ]
     ];
 
     public function getCleanBody()
     {
-        $clean = htmlentities($this->body.'[http://google.de]');
+        $clean = htmlentities($this->body);
 
-        return $this->parse($this->addQuotes($clean));
+        return $this->addQuotes($this->parse($clean));
     }
 
     private function addQuotes($string)

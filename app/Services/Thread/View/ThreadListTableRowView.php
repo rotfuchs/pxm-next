@@ -8,6 +8,8 @@ use App\Services\User\View\UserNameLinkView;
 
 class ThreadListTableRowView extends View
 {
+    public $board_id;
+    public $post_id;
     public $thread_id;
     public $threadClass;
     public $topic;
@@ -21,6 +23,8 @@ class ThreadListTableRowView extends View
 
     public function setThread(Thread $thread)
     {
+        $this->board_id = $thread->board_id;
+        $this->post_id = $thread->getRawValue('post_id');
         $this->thread_id = $thread->id;
         $this->threadClass = ($thread->fixed) ? 'fixed' : '';
         $this->topic = $thread->getRawValue('subject');

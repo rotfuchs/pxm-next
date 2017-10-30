@@ -10355,6 +10355,7 @@ try {
 
 window.Frameset = __webpack_require__("./resources/assets/js/frameset/Frameset.js");
 window.Board = __webpack_require__("./resources/assets/js/components/board/board_index.js");
+window.Thread = __webpack_require__("./resources/assets/js/components/thread/threadlist_index.js");
 
 // Vue.component('faq-topic-item', require('./components/ExampleComponent.vue'));
 
@@ -10408,6 +10409,81 @@ function initEvents() {
 
             popup = window.open('/user/id/' + userId + '/layout/new_window', 'profile', 'width=655,height=620,scrolling=auto,scrollbars=1,resizable=0');
             popup.focus();
+        });
+    }
+}
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/thread/threadlist_index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["initEvents"] = initEvents;
+function initEvents() {
+    Frameset.initClassicFrameset();
+    initThreadListUserProfileWindow();
+    initThreadListStartTopicFrames();
+    initBrowserHistoryEvents();
+
+    function initBrowserHistoryEvents() {
+        window.onpopstate = function (event) {
+            loadThreadListWithPost(event.state.thread_id, event.state.post_id);
+        };
+    }
+
+    function initThreadListUserProfileWindow() {
+        var userLinks = $('table.threads').find('.author a');
+        var popup = void 0;
+        var userId = void 0;
+
+        userLinks.on('click', function (e) {
+            e.preventDefault();
+
+            userId = $(this).data('id');
+
+            popup = window.open('/user/id/' + userId + '/layout/new_window', 'profile', 'width=655,height=620,scrolling=auto,scrollbars=1,resizable=0');
+            popup.focus();
+        });
+    }
+
+    function initThreadListStartTopicFrames() {
+        var topics = $('table.threads').find('.topic a');
+        var el;
+        var data = void 0;
+
+        topics.on('click', function (e) {
+            e.preventDefault();
+            el = $(this);
+
+            data = {
+                'thread_id': $(this).data('thread_id'),
+                'post_id': $(this).data('post_id')
+            };
+
+            loadThreadListWithPost(data.thread_id, data.post_id, function () {
+                history.pushState(data, el.text(), el.prop('href'));
+            });
+        });
+    }
+
+    function loadThreadListWithPost(thread_id, post_id, callback) {
+        $.ajax({
+            url: '/thread/get-message-tree-json',
+            data: {
+                'thread_id': thread_id,
+                'post_id': post_id
+            },
+            method: 'GET',
+            dataType: 'json'
+        }).done(function (response) {
+            if (response.success === true) {
+                $('.postTreeContainer .wrapper').html(response.tree);
+                $('.postContainer .wrapper').html(response.message);
+
+                if (typeof callback === 'function') callback(response);
+            }
         });
     }
 }

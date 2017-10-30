@@ -15,7 +15,6 @@ body {
 }
 
 a,
-a:visited,
 a:active {
   color: #ffff7c;
   text-decoration: none;
@@ -200,6 +199,15 @@ table.threads td.topic a {
   font-size: 10pt;
 }
 
+table.threads td.topic a:visited {
+  color: #f0888a;
+}
+
+table.threads td.topic a:active {
+  color: #ffff7c;
+  text-decoration: underline;
+}
+
 table.threads td.topic a.fixed {
   color: #ffff7c;
 }
@@ -259,6 +267,15 @@ table.threads tfoot td.info span.category {
   color: #ffffff;
 }
 
+.messageTree li a.subject:visited {
+  color: #f0888a;
+}
+
+.messageTree li a.subject:active {
+  color: #ffff7c;
+  text-decoration: underline;
+}
+
 .treeContainer {
   height: auto;
   padding-top: 15px;
@@ -298,6 +315,7 @@ table.threads tfoot td.info span.category {
   line-height: 30px;
   /* default list item's `line-height` */
   position: relative;
+  white-space: nowrap;
 }
 
 .tree li:before {
@@ -349,13 +367,18 @@ div.message .created {
   padding-right: 10px;
 }
 
+div.message .created a {
+  color: #ffffff;
+}
+
 div.message .topic span,
 div.message .created span {
   font-weight: normal;
 }
 
 div.message .replyInfo,
-div.message .messageFoot {
+div.message .messageFoot,
+div.secondMessageFoot {
   padding: 4px 14px;
   font-size: small;
   font-weight: bold;
@@ -367,7 +390,8 @@ div.message .replyInfo {
   border-top: 0;
 }
 
-div.message .messageFoot {
+div.message .messageFoot,
+div.secondMessageFoot {
   text-align: right;
   line-height: 20px;
 }

@@ -25,7 +25,7 @@
 
     <script>
         window.onload = function () {
-            Frameset.initClassicFrameset();
+            Thread.initEvents();
         };
     </script>
 @endsection

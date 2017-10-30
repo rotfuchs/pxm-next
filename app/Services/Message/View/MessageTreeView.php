@@ -9,6 +9,7 @@ use App\Services\Message\Repository\Filter\MessageFilter;
 
 class MessageTreeView extends View
 {
+    public $post_id;
     public $userName;
     public $subject;
     public $children = [];
@@ -23,6 +24,7 @@ class MessageTreeView extends View
         if(!($firstMessage instanceof Message))
             return;
 
+        $this->post_id = $firstMessage->id;
         $this->userName = $firstMessage->usernickname;
         $this->subject = $firstMessage->subject;
         $this->children = MessageTreeItemView::getChildren($firstMessage->id);

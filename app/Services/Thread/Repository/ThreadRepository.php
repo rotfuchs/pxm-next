@@ -24,9 +24,12 @@ class ThreadRepository
             $select = $this->db
                 ->table('pxm_thread')
                 ->join('pxm_message', 'pxm_thread.id', '=','pxm_message.thread_id')
-                ->select('pxm_thread.*', 'pxm_message.usernickname', 'pxm_message.subject', 'pxm_message.tstmp', 'pxm_message.user_id')
+                ->select('pxm_thread.*', 'pxm_message.usernickname', 'pxm_message.subject', 'pxm_message.tstmp', 'pxm_message.user_id', 'pxm_message.id as post_id')
                 ->where('pxm_message.parentid' , '=', 0)
                 ->orderByDesc('pxm_thread.fixed');
+
+            if(is_numeric($filter->thread_id))
+                $select = $select->where('pxm_thread.id', '=', $filter->thread_id);
 
             if(is_numeric($filter->board_id))
                 $select = $select->where('board_id', '=', $filter->board_id);

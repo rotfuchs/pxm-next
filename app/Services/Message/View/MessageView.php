@@ -8,6 +8,8 @@ use App\Services\Message\Query\MessageQueryService;
 
 class MessageView extends View
 {
+    public $post_id;
+    public $thread_id;
     public $subject;
     public $createdDateTime;
     public $isReply = false;
@@ -26,6 +28,8 @@ class MessageView extends View
         if(!($message instanceof Message))
             return;
 
+        $this->post_id = $message->id;
+        $this->thread_id = $message->thread_id;
         $this->subject = $message->subject;
         $this->userName = $message->usernickname;
         $this->content = $message->getCleanBody();

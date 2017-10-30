@@ -15,13 +15,18 @@ div.message .created {
  padding-right: 10px;
 }
 
+div.message .created a {
+  color: #ffffff;
+}
+
 div.message .topic span,
 div.message .created span {
   font-weight: normal;
 }
 
 div.message .replyInfo,
-div.message .messageFoot {
+div.message .messageFoot,
+div.secondMessageFoot {
   padding: 4px 14px;
   font-size: small;
   font-weight: bold;
@@ -33,7 +38,8 @@ div.message .replyInfo {
   border-top: 0;
 }
 
-div.message .messageFoot {
+div.message .messageFoot,
+div.secondMessageFoot {
   text-align: right;
   line-height: 20px;
 }

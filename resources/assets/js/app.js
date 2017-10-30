@@ -24,6 +24,7 @@ try {
 
 window.Frameset = require('./frameset/Frameset.js');
 window.Board = require('./components/board/board_index.js');
+window.Thread = require('./components/thread/threadlist_index.js');
 
 // Vue.component('faq-topic-item', require('./components/ExampleComponent.vue'));
 

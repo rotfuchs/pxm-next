@@ -1,6 +1,6 @@
 <div class="messageTree">
     <div class="defaultHeader">
-        Antwort auf "<a href="">{{$subject}}</a>" von {{$userName}}
+        Antwort auf "<a href="/post/id/{{$post_id}}">{{$subject}}</a>" von {{$userName}}
     </div>
     <div class="treeContainer">
         <ul class="tree">
