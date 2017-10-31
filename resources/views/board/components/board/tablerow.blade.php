@@ -1,5 +1,14 @@
 <tr>
-    <td class="topic"><a class="{{$threadClass}}" href="/board/id/{{$board_id}}/thread/{{$thread_id}}/post/{{$post_id}}" data-post_id="{{$post_id}}" data-thread_id="{{$thread_id}}">{{$topic}}</a></td>
+    <td class="topic">
+        <a
+                class="{{$threadClass}}"
+                href="/board/id/{{$board_id}}/thread/{{$thread_id}}/post/{{$post_id}}"
+                data-post_id="{{$post_id}}"
+                data-thread_id="{{$thread_id}}"
+                title="{{$topic}}"
+        >{{$topic}}
+        </a>
+    </td>
     <td class="author">{!! $author !!}</td>
     <td class="createdDate">{{$createdDateTime}}</td>
     <td class="viewCount">{{$viewCount}}</td>

@@ -12,6 +12,14 @@ table.threads thead th {
   padding: 4px;
 }
 
+table.threads tbody tr:hover {
+  background-color: #8f1425;
+}
+
+table.threads tbody tr:hover td {
+  background-color: transparent;
+}
+
 table.threads td {
   padding: 3px;
 }
@@ -35,8 +43,23 @@ table.threads .replyCount {
   text-align: center;
 }
 
+table.threads td.viewCount,
+table.threads td.replyCount {
+  width: 28px;
+}
+
+table.threads td.author,
+table.threads td.createdDate,
+table.threads td.lastMsg {
+  width: 100px;
+}
+
 table.threads td.topic a {
   font-size: 10pt;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 340px;
 }
 
 table.threads td.topic a,

@@ -31,7 +31,11 @@
                 </select>
             </td>
             <td colspan="4" class="navigation">
-                Ältere Threads anzeigen
+                @if($prevPage>=0)
+                    <a href="/board/id/{{$id}}/page/{{$prevPage}}"><span class="icon-arrow-left"></span> Zurück</a> |
+                @endif
+
+                <a href="/board/id/{{$id}}/page/{{$nextPage}}">Ältere Threads anzeigen <span class="icon-arrow-right"></span></a>
             </td>
         </tr>
     </tfoot>

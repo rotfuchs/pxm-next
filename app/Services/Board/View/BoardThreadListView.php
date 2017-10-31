@@ -13,9 +13,12 @@ use App\Services\Thread\View\ThreadListTableRowView;
 class BoardThreadListView extends View
 {
     public $name;
+    public $id;
     public $threadTableRowViews = [];
     public $limit = 60;
     public $page = 0;
+    public $prevPage;
+    public $nextPage;
 
     protected $viewName = 'board.components.board.table';
 
@@ -26,6 +29,7 @@ class BoardThreadListView extends View
         if(!($board instanceof Board))
             return;
 
+        $this->id = $board->id;
         $this->name = $board->name;
 
         foreach($this->getThreads($id) as $thread) {
@@ -35,6 +39,9 @@ class BoardThreadListView extends View
 
             $this->threadTableRowViews[] = $tableRowView;
         }
+
+        $this->nextPage = $this->page + 1;
+        $this->prevPage = $this->page - 1;
     }
 
     private function getThreads($board_id)

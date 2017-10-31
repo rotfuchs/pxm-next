@@ -55,4 +55,32 @@ class ThreadRepository
         }
     }
 
+    public function getThreadNumber($thread_id, $board_id, $orderField, $orderSort)
+    {
+        try {
+            $orderSort = ($orderSort!='ASC') ? 'DESC' : 'ASC';
+
+            $result = \DB::select(
+                'SELECT rank FROM ( 
+                              SELECT *, @rownum := @rownum + 1 as rank
+                              FROM pxm_thread, (SELECT @rownum := 0) r
+                              WHERE board_id = :board_id 
+                              ORDER BY fixed DESC, :orderField '.$orderSort.' ) z
+                      WHERE z.id = :thread_id', [
+                        'board_id' => $board_id,
+                        'thread_id' => $thread_id,
+                        'orderField' => $orderField
+            ]);
+
+            if(is_array($result) && isset($result[0]->rank))
+                return $result[0]->rank;
+
+            return false;
+
+        } catch (\Exception $e) {
+            $this->messageCollector->writeError($e->getMessage());
+
+            return false;
+        }
+    }
 }

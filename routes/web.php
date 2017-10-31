@@ -20,6 +20,7 @@ Route::get('/test', 'TestController@test');
 Route::get('/test2', 'TestController@test2');
 
 Route::get('/boards', 'BoardController@getBoardListView');
+Route::get('/board/id/{id}/page/{page}', 'BoardController@getBoardPageView');
 Route::get('/board/id/{id}', 'BoardController@getBoardView');
 Route::get('/board/id/{board_id}/thread/{thread_id}/post/{post_id}', 'BoardController@getBoardPostView');
 

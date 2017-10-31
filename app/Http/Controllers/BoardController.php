@@ -8,14 +8,20 @@ use App\Services\Board\View\BoardIndexTableRowView;
 use App\Services\Board\View\BoardThreadListView;
 use App\Services\Message\View\MessageTreeView;
 use App\Services\Message\View\MessageView;
+use App\Services\Thread\Query\ThreadQueryService;
 
 class BoardController extends Controller
 {
     private $boardQueryService;
+    private $threadQueryService;
 
-    public function __construct(BoardQueryService $boardQueryService)
+    public function __construct(
+        BoardQueryService $boardQueryService,
+        ThreadQueryService $threadQueryService
+    )
     {
         $this->boardQueryService = $boardQueryService;
+        $this->threadQueryService = $threadQueryService;
     }
 
     //
@@ -50,9 +56,23 @@ class BoardController extends Controller
         ]);
     }
 
-    public function getBoardPostView($board_id, $thread_id, $post_id)
+    public function getBoardPageView($board_id, $page)
     {
         $boardThreadListView = new BoardThreadListView();
+        $boardThreadListView->page = (int)$page;
+        $boardThreadListView->setBoardId($board_id);
+
+        return view('board.boardframe', [
+            'threadList' => $boardThreadListView,
+        ]);
+    }
+
+    public function getBoardPostView($board_id, $thread_id, $post_id)
+    {
+        $pageNumber = $this->threadQueryService->getPageNumberForThread($thread_id, $board_id);
+
+        $boardThreadListView = new BoardThreadListView();
+        $boardThreadListView->page = $pageNumber;
         $boardThreadListView->setBoardId($board_id);
 
         $messageTreeView = new MessageTreeView();

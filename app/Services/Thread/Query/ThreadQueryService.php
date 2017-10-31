@@ -35,4 +35,20 @@ class ThreadQueryService
 
         return $threads[0];
     }
+
+    public function getPageNumberForThread($thread_id, $board_id, $pageLimit = 60, $orderField = null, $orderSort = null)
+    {
+        $filter = new ThreadsFilter();
+        $orderField = (is_null($orderField)) ? $filter->orderField : $orderField;
+        $orderSort = (is_null($orderSort)) ? $filter->orderSort : $orderSort;
+
+        $number = $this->threadRepository->getThreadNumber(
+            $thread_id,
+            $board_id,
+            $orderField,
+            $orderSort
+        );
+
+        return floor($number/$pageLimit);
+    }
 }
