@@ -1,4 +1,10 @@
-<div class="defaultHeader"></div>
+<div class="defaultHeader">
+    Thread-Index: <span class="category">{{$name}}</span> |
+    Rubrik
+    <select>
+        <option></option>
+    </select>
+</div>
 <table class="default threads">
     <thead>
         <tr>
@@ -19,7 +25,10 @@
     <tfoot>
         <tr>
             <td colspan="2" class="info">
-                Thread-Index: <span class="category">Spielefront</span>
+                Thread-Index: <span class="category">{{$name}}</span> | Rubrik
+                <select>
+                    <option></option>
+                </select>
             </td>
             <td colspan="4" class="navigation">
                 Ältere Threads anzeigen

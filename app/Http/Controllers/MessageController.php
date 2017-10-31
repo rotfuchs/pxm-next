@@ -61,6 +61,19 @@ class MessageController extends Controller
         ]);
     }
 
+    public function getTreeJson()
+    {
+        $thread_id = request()->get('thread_id');
+
+        $messageTreeView = new MessageTreeView();
+        $messageTreeView->setThreadId($thread_id);
+
+        return response()->json([
+            'success' => ($messageTreeView instanceof MessageTreeView),
+            'tree' => $messageTreeView.''
+        ]);
+    }
+
     public function getMessageJson()
     {
         $post_id = request()->get('post_id');

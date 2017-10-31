@@ -39,24 +39,26 @@ table.threads td.topic a {
   font-size: 10pt;
 }
 
-table.threads td.topic a:visited {
+table.threads td.topic a,
+table.threads td.author a,
+table.threads .lastMsg a,
+table.threads .replyCount a {
+  color: #ffffff;
+}
+
+table.threads td.topic a:visited,
+table.threads td.lastMsg a:visited {
   color: #f0888a;
 }
 
-table.threads td.topic a:active {
+table.threads td.topic a:active,
+table.threads td.lastMsg a:active {
   color: #ffff7c;
   text-decoration: underline;
 }
 
 table.threads td.topic a.fixed {
   color: #ffff7c;
-}
-
-table.threads td.topic a,
-table.threads td.author a,
-table.threads .lastMsg a,
-table.threads .replyCount a {
-  color: #ffffff;
 }
 
 table.threads tfoot td {

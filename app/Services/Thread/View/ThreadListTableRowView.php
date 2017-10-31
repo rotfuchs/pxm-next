@@ -18,6 +18,7 @@ class ThreadListTableRowView extends View
     public $viewCount;
     public $replyCount;
     public $lastMsgDateTime;
+    public $lastMsgId;
 
     protected $viewName = 'board.components.board.tablerow';
 
@@ -38,5 +39,6 @@ class ThreadListTableRowView extends View
         $this->viewCount = $thread->views;
         $this->replyCount = $thread->msgquantity;
         $this->lastMsgDateTime = date(\Config::get('app.date_format'), $thread->lastmsgtstmp);
+        $this->lastMsgId = $thread->lastmsgid;
     }
 }

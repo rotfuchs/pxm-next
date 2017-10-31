@@ -23,6 +23,9 @@ class BoardRepository
         try {
             $select = $this->db->table('pxm_board');
 
+            if(is_numeric($filter->board_id))
+                $select = $select->where('id', '=', $filter->board_id);
+
             if(!is_null($filter->active))
                 $select = $select->where('active', '=', 1);
 

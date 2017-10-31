@@ -23,6 +23,7 @@ Route::get('/boards', 'BoardController@getBoardListView');
 Route::get('/board/id/{id}', 'BoardController@getBoardView');
 Route::get('/board/id/{board_id}/thread/{thread_id}/post/{post_id}', 'BoardController@getBoardPostView');
 
+Route::get('/thread/get-tree-json', 'MessageController@getTreeJson');
 Route::get('/thread/get-message-tree-json', 'MessageController@getMessageTreeJson');
 Route::get('/thread/{thread_id}', 'MessageController@getMessageTreeView');
 Route::get('/post/get-message-json', 'MessageController@getMessageJson');
