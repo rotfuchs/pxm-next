@@ -60,4 +60,17 @@ class MessageController extends Controller
             'message' => $messageView.''
         ]);
     }
+
+    public function getMessageJson()
+    {
+        $post_id = request()->get('post_id');
+
+        $messageView = new MessageView();
+        $messageView->setMessageId($post_id);
+
+        return response()->json([
+            'success' => ($messageView instanceof MessageView),
+            'message' => $messageView.''
+        ]);
+    }
 }

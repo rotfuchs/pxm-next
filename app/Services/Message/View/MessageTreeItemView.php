@@ -8,6 +8,7 @@ use App\Services\Message\Model\Message;
 class MessageTreeItemView extends View
 {
     public $id;
+    public $thread_id;
     public $subject;
     public $userName;
     public $createdDateTime;
@@ -25,9 +26,10 @@ class MessageTreeItemView extends View
     public function setMessage(Message $message)
     {
         $this->id = $message->id;
+        $this->thread_id = $message->thread_id;
         $this->subject = $message->subject;
         $this->userName = $message->usernickname;
-        $this->createdDateTime = date(\Config::get('app.date_format', $message->tstmp));
+        $this->createdDateTime = date(\Config::get('app.date_format'), $message->tstmp);
         $this->children = self::getChildren($message->id);
     }
 

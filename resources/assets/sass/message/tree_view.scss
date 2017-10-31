@@ -24,6 +24,14 @@
   color: #ffffff;
 }
 
+.messageTree li span.icon-arrow-right {
+  margin-left: -11px;
+  line-height: inherit;
+  z-index: 9999;
+  color: #ffff7c;
+  position: absolute;
+}
+
 .messageTree li a.subject:visited {
   color: #f0888a;
 }
