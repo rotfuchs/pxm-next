@@ -5,7 +5,7 @@
         <div class="wrapper">
             <div class="header">
                 <div class="banner"></div>
-                <div class="top-navigation">neue beitraege | suche | user| online? | registrieren | login | tm+7</div>
+                <div class="top-navigation">@include('layout.navigation.topnavigation')</div>
             </div>
             {!! $messageTree !!}
         </div>

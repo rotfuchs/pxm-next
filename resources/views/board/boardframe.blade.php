@@ -7,7 +7,7 @@
                 <a href="/boards">
                     <div class="banner"></div>
                 </a>
-                <div class="top-navigation">neue beitraege | suche | user| online? | registrieren | login | tm+7</div>
+                <div class="top-navigation">@include('layout.navigation.topnavigation')</div>
             </div>
             {!! $threadList !!}
         </div>

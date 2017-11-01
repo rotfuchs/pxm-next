@@ -20,8 +20,10 @@
         <div class="singlePage">
             <div class="wrapper">
                 <div class="header">
-                    <div class="banner"></div>
-                    <div class="top-navigation">registrierung | passwort vergessen? | faq | online? | tm+7</div>
+                    <a href="/boards">
+                        <div class="banner"></div>
+                    </a>
+                    <div class="top-navigation">@include('layout.navigation.board-topnavigation')</div>
                 </div>
                 @yield('content')
             </div>

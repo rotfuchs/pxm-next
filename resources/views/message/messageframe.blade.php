@@ -4,8 +4,10 @@
     <div class="singlePage">
         <div class="wrapper">
             <div class="header">
-                <div class="banner"></div>
-                <div class="top-navigation">neue beitraege | suche | user| online? | registrieren | login | tm+7</div>
+                <a href="/boards">
+                    <div class="banner"></div>
+                </a>
+                <div class="top-navigation">@include('layout.navigation.topnavigation')</div>
             </div>
             {!! $message !!}
             <div class="secondMessageFoot">
