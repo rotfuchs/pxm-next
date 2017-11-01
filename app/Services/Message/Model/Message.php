@@ -3,6 +3,8 @@
 namespace App\Services\Message\Model;
 
 use App\Extras\Database\Model;
+use App\Extras\Parser\Parser;
+use App\Extras\Parser\ParserDefinitions;
 
 class Message extends Model
 {
@@ -19,59 +21,10 @@ class Message extends Model
     public $ip;
     public $notification;
 
-    private $parses = [
-        'bold' => [
-            'pattern' => '/\[[bB]\:(.*?)\]/s',
-            'replace' => '<strong>$1</strong>',
-            'content' => '$1'
-        ],
-        'italic' => [
-            'pattern' => '/\[[iI]\:(.*?)\]/s',
-            'replace' => '<i>$1</i>',
-            'content' => '$1'
-        ],
-        'underline' => [
-            'pattern' => '/\[[uU]\:(.*?)\]/s',
-            'replace' => '<u>$1</u>',
-            'content' => '$1'
-        ],
-        'url' => [
-            'pattern' => '/\[((http|https|ftp|ftps)\:\/\/.*?)\]/s',
-            'replace' => '[<a href="$1" target="_blank">$1</a>]',
-            'content' => '$1'
-        ]
-    ];
-
     public function getCleanBody()
     {
-        $clean = htmlentities($this->body);
+        $parser = new Parser(new ParserDefinitions());
 
-        return $this->addQuotes($this->parse($clean));
-    }
-
-    private function addQuotes($string)
-    {
-        $paragrapths = explode("<br />", nl2br($string));
-
-        foreach($paragrapths as $pos => $paragrapth)
-            if(substr($paragrapth,0, 4)=='&gt;')
-                $paragrapths[$pos] = '<span class="quote">'.$paragrapth.'</span>';
-
-        return implode('<br />', $paragrapths);
-    }
-
-
-    private function parse($string)
-    {
-        foreach($this->parses as $parse) {
-            if(preg_match($parse['pattern'], $string, $match))
-                $string = preg_replace(
-                    $parse['pattern'],
-                    $parse['replace'],
-                    $string
-                );
-        }
-
-        return $string;
+        return $parser->parse($this->body);
     }
 }
