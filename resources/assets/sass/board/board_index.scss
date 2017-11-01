@@ -2,6 +2,11 @@
  * /css/board/board_index.css START
  * ------------------------------------------------------ */
 
+.boardIndex .defaultHeader {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 1.3pt;
+}
+
 table.default td.mods {
   background-color: #8f1425;
   text-align: center;

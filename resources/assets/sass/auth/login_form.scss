@@ -1,0 +1,65 @@
+/* ------------------------------------------------------
+ * /css/auth/login_form.css START
+ * ------------------------------------------------------ */
+
+.loginContainer .defaultHeader {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 1.3pt;
+}
+
+.loginContainer .formContainer form {
+  display: flex;
+}
+
+.loginContainer .formContainer form div {
+  background-color: #8f1425;
+}
+
+.loginContainer .formContainer .formElements {
+  border-right: 1px solid #c01425;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.loginContainer .formElements input[type="text"],
+.loginContainer .formElements input[type="password"] {
+  width: 120px;
+  font-size: 10pt;
+  margin-right: 10px;
+  padding: 1px 1px 2px 1px;
+  border-style: groove;
+  box-sizing: border-box;
+}
+
+.loginContainer .formElements input[type="submit"] {
+  border-style: groove;
+  width: 70px;
+  padding: 1px 1px 2px 1px;
+}
+
+.loginContainer .loginFooter,
+.loginContainer .formContainer {
+  border: 1px solid #c01425;
+  border-top: 0;
+}
+
+.loginContainer .loginFooter {
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.loginContainer .formInfo {
+  width: 208px;
+  text-align: center;
+  padding: 4px;
+}
+
+.loginContainer .formElements {
+  flex: 1;
+}
+
+/* ------------------------------------------------------
+ * /css/auth/login_form.css END
+ * ------------------------------------------------------ */
