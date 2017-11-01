@@ -10,9 +10,12 @@ export function initEvents()
     initThreadListUserProfileWindow();
     initThreadListStartTopicFrames();
     initThreadListLastMsgFrames();
-    initBrowserHistoryEvents();
     initThreadListReplyCountFrames();
+    initThreadListNavigation();
+
+    initBrowserHistoryEvents();
     initTreeEvents();
+
 
     function initBrowserHistoryEvents()
     {
@@ -100,6 +103,28 @@ export function initEvents()
         });
     }
 
+    function initThreadListNavigation()
+    {
+        let navigation = $('table.threads').find('.navigation a');
+        let el;
+        let data;
+
+        navigation.on('click', function(e) {
+            e.preventDefault();
+            el = $(this);
+
+            data = {
+                'board_id': $(this).data('board_id'),
+                'page': $(this).data('page')
+            };
+
+            loadThreadListPage(data.board_id, data.page, function () {
+                //@todo save event in browser history
+            });
+
+        });
+    }
+
     function initTreeEvents()
     {
         let posts = $('.tree').find('a.subject');
@@ -180,6 +205,34 @@ export function initEvents()
                 $('.postContainer .wrapper').html(response.message);
                 markTreePost(post_id);
                 initPostEvents();
+
+                if(typeof callback === 'function')
+                    callback(response);
+            }
+        });
+    }
+
+    function loadThreadListPage(board_id, page, callback) {
+        let threadListContainer = $('.threadViewContainer');
+
+        $.ajax({
+            url: '/board/get-thread-list-json',
+            data: {
+                'board_id': board_id,
+                'page': page
+            },
+            method: 'GET',
+            dataType: 'json'
+        }).done(function( response ) {
+            if(response.success===true) {
+                threadListContainer.find('.threadList').html(response.threadList);
+                threadListContainer.animate({ scrollTop: 0 });
+
+                initThreadListUserProfileWindow();
+                initThreadListStartTopicFrames();
+                initThreadListLastMsgFrames();
+                initThreadListReplyCountFrames();
+                initThreadListNavigation();
 
                 if(typeof callback === 'function')
                     callback(response);

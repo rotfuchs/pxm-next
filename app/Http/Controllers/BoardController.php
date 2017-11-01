@@ -67,6 +67,21 @@ class BoardController extends Controller
         ]);
     }
 
+    public function getBoardPageJson()
+    {
+        $board_id = request()->get('board_id');
+        $page = request()->get('page');
+
+        $boardThreadListView = new BoardThreadListView();
+        $boardThreadListView->page = (int)$page;
+        $boardThreadListView->setBoardId($board_id);
+
+        return response()->json([
+            'success' => ($boardThreadListView instanceof BoardThreadListView),
+            'threadList' => $boardThreadListView.''
+        ]);
+    }
+
     public function getBoardPostView($board_id, $thread_id, $post_id)
     {
         $pageNumber = $this->threadQueryService->getPageNumberForThread($thread_id, $board_id);

@@ -10,7 +10,9 @@
                     </a>
                     <div class="top-navigation">neue beitraege | suche | user| online? | registrieren | login | tm+7</div>
                 </div>
-                {!! $threadList !!}
+                <div class="threadList">
+                    {!! $threadList !!}
+                </div>
             </div>
         </div>
         <div class="postTreeContainer">

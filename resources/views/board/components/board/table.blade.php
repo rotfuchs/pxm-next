@@ -32,10 +32,10 @@
             </td>
             <td colspan="4" class="navigation">
                 @if($prevPage>=0)
-                    <a href="/board/id/{{$id}}/page/{{$prevPage}}"><span class="icon-arrow-left"></span> Zurück</a> |
+                    <a href="/board/id/{{$id}}/page/{{$prevPage}}" data-board_id="{{$id}}" data-page="{{$prevPage}}"><span class="icon-arrow-left"></span> Zurück</a> |
                 @endif
 
-                <a href="/board/id/{{$id}}/page/{{$nextPage}}">Ältere Threads anzeigen <span class="icon-arrow-right"></span></a>
+                <a href="/board/id/{{$id}}/page/{{$nextPage}}" data-board_id="{{$id}}" data-page="{{$nextPage}}">Ältere Threads anzeigen <span class="icon-arrow-right"></span></a>
             </td>
         </tr>
     </tfoot>
