@@ -1,0 +1,144 @@
+/* ------------------------------------------------------
+ * /css/message/message_form.css START
+ * ------------------------------------------------------ */
+
+.messageForm .defaultHeader {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 1.3pt;
+}
+
+.messageForm .firstLabel {
+  width: 118px;
+  display: inline-block;
+  text-align: right;
+}
+
+.messageForm .replyMailInfo {
+  padding-top: 2px;
+  width: 230px;
+  border-left: 1px solid #c01425;
+  text-align: center;
+}
+
+.messageForm .replyMailInfo label {
+  cursor: pointer;
+}
+
+.messageForm .replyMailInfo input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.messageForm .topicFields,
+.messageForm .topicFields .subject label {
+  display: flex;
+}
+
+.messageForm .topicFields .subject,
+.messageForm .topicFields .subject .input {
+  flex: 1;
+}
+
+.messageForm .topicFields .subject .input {
+  padding-left: 4px;
+}
+
+.messageForm .topicFields .subject .firstLabel {
+  padding-top: 2px;
+}
+
+.messageForm .loginFields,
+.messageForm .topicFields {
+  font-weight: bold;
+  font-size: 10pt;
+  background-color: #8f1425;
+  border: 1px solid #c01425;
+  border-top: 0;
+  padding: 3px 0;
+}
+
+.messageForm .topicFields input[type="text"] {
+  width: 100%;
+}
+
+.messageForm .topicFields input[type="text"],
+.messageForm .loginFields input[type="text"],
+.messageForm .loginFields input[type="password"] {
+  font-size: 10pt;
+  margin-right: 10px;
+  padding: 1px 1px 2px 1px;
+  border-style: groove;
+  box-sizing: border-box;
+}
+
+.messageForm .loginFields input[type="text"],
+.messageForm .loginFields input[type="password"] {
+  width: 120px;
+}
+
+.messageForm .textBody {
+  padding: 12px;
+}
+
+.messageForm .textBody textarea {
+  background-color: #a51425;
+  width: 100%;
+  height: 170px;
+  min-height: 170px;
+  resize: vertical;
+  font-family: Courier New,Courier,monospace;
+  color: #ffffff;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.messageForm .textBody textarea,
+.messageForm .textBody textarea:focus {
+  outline: none !important;
+  border: 1px groove #ffffff;
+}
+
+.messageForm .options {
+  border-top: 1px solid #c01425;
+  text-align: center;
+}
+
+.messageForm .options input {
+  border-style: groove;
+  padding: 0 6px;
+}
+
+.messageForm .styleOptions {
+  width: 730px;
+  display: inline-block;
+  padding: 6px 0 6px 0;
+}
+
+.messageForm .styleButtons {
+  display: flex;
+  font-weight: bold;
+}
+
+.messageForm .styleButtons div {
+  padding-right: 20px;
+}
+
+.messageForm .options .smilieOption {
+  padding-top: 4px;
+}
+
+.messageForm .options .smilieOption a {
+  color: #ffffff;
+}
+
+.messageForm .footerLinks {
+  border: 1px solid #c01425;
+  background-color: #8f1425;
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+  padding: 7px;
+}
+
+/* ------------------------------------------------------
+ * /css/message/message_form.css END
+ * ------------------------------------------------------ */

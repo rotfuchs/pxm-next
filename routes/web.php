@@ -30,6 +30,7 @@ Route::get('/thread/get-message-tree-json', 'MessageController@getMessageTreeJso
 Route::get('/thread/{thread_id}', 'MessageController@getMessageTreeView');
 Route::get('/post/get-message-json', 'MessageController@getMessageJson');
 Route::get('/post/id/{post_id}', 'MessageController@getMessageView');
+Route::get('/post/new', 'MessageController@getNewMessageView');
 
 
 Route::get('/faq', 'FaqController@getFaqIndexView');

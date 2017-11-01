@@ -6,6 +6,7 @@ use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
 use App\Services\Board\View\BoardIndexTableRowView;
 use App\Services\Board\View\BoardThreadListView;
+use App\Services\Message\View\MessageFormView;
 use App\Services\Message\View\MessageTreeView;
 use App\Services\Message\View\MessageView;
 use App\Services\Thread\Query\ThreadQueryService;
@@ -49,10 +50,12 @@ class BoardController extends Controller
 
         $messageTreeView = new MessageTreeView();
 
+        $messageForm = new MessageFormView();
+
         return view('board.board', [
             'threadList' => $boardThreadListView,
             'messageTree' => $messageTreeView,
-            'message' => ''
+            'message' => $messageForm
         ]);
     }
 

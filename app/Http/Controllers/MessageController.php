@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Message\View\MessageFormView;
 use App\Services\Message\View\MessageTreeView;
 use App\Services\Message\View\MessageView;
 use App\Services\Thread\Model\Thread;
@@ -84,6 +85,15 @@ class MessageController extends Controller
         return response()->json([
             'success' => ($messageView instanceof MessageView),
             'message' => $messageView.''
+        ]);
+    }
+
+    public function getNewMessageView()
+    {
+        $messageForm = new MessageFormView();
+
+        return view('message.newmessageframe', [
+            'newMessageForm' => $messageForm.''
         ]);
     }
 }
