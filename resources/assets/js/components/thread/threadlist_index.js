@@ -19,7 +19,9 @@ export function initEvents()
 
     function initBoardHeaderNavigationEvents()
     {
-        let newPost = $('div.header').find('a.new-post');
+        let header = $('div.header');
+        let newPost = header.find('a.new-post');
+        let search = header.find('a.search');
         let data;
 
         newPost.on('click', function(e) {
@@ -30,6 +32,18 @@ export function initEvents()
             };
 
             loadNewPostFrame(data.board_id, function() {
+
+            });
+        });
+
+        search.on('click', function(e) {
+            e.preventDefault();
+
+            data = {
+                'board_id': $(this).data('board_id')
+            };
+
+            loadSearchPostFrame(data.board_id, function() {
 
             });
         });
@@ -271,6 +285,25 @@ export function initEvents()
             if(response.success===true) {
                 $('.postContainer .wrapper').html(response.message);
                 $('.postTreeContainer .wrapper').html('');
+
+                if(typeof callback === 'function')
+                    callback(response);
+            }
+        });
+    }
+
+    function loadSearchPostFrame(board_id, callback)
+    {
+        $.ajax({
+            url: '/search/get-search-form-json',
+            data: {
+                'board_id': board_id
+            },
+            method: 'GET',
+            dataType: 'json'
+        }).done(function( response ) {
+            if(response.success===true) {
+                $('.threadViewContainer').find('.threadList').html(response.searchForm);
 
                 if(typeof callback === 'function')
                     callback(response);

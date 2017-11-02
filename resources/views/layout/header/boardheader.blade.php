@@ -8,7 +8,7 @@
                 <a class="new-post" href="/post/new/board/{{$board_id}}" data-board_id="{{$board_id}}">Neuer Beitrag</a>
             </div>
             <div class="item">
-                <a href="/search">Suche</a>
+                <a class="search" href="/search/board/{{$board_id}}" data-board_id="{{$board_id}}">Suche</a>
             </div>
             <div class="item">
                 <a href="/user">User</a>

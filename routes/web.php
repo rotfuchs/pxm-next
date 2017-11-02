@@ -28,11 +28,14 @@ Route::get('/board/get-thread-list-json', 'BoardController@getBoardPageJson');
 Route::get('/thread/get-tree-json', 'MessageController@getTreeJson');
 Route::get('/thread/get-message-tree-json', 'MessageController@getMessageTreeJson');
 Route::get('/thread/{thread_id}', 'MessageController@getMessageTreeView');
+
 Route::get('/post/get-message-json', 'MessageController@getMessageJson');
 Route::get('/post/id/{post_id}', 'MessageController@getMessageView');
 Route::get('/post/new/board/{board_id}', 'MessageController@getNewMessageView');
 Route::get('/post/get-new-post-form-json', 'MessageController@getNewMessageJson');
 
+Route::get('/search/board/{board_id}', 'SearchController@getSearchView');
+Route::get('/search/get-search-form-json', 'SearchController@getSearchJson');
 
 Route::get('/faq', 'FaqController@getFaqIndexView');
 
