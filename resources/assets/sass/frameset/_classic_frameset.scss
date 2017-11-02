@@ -23,6 +23,13 @@
   height: 39vh;
   min-height: 39vh;
   overflow: auto;
+  //position: absolute;
+  //width: 100%;
+}
+
+.classicFrameset .postContainer .defaultHeader,
+.classicFrameset .postTreeContainer .defaultHeader {
+  cursor: ns-resize;
 }
 
 .classicFrameset .threadViewContainer .wrapper,
