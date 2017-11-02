@@ -15,7 +15,25 @@ export function initEvents()
 
     initBrowserHistoryEvents();
     initTreeEvents();
+    initBoardHeaderNavigationEvents();
 
+    function initBoardHeaderNavigationEvents()
+    {
+        let newPost = $('div.header').find('a.new-post');
+        let data;
+
+        newPost.on('click', function(e) {
+            e.preventDefault();
+
+            data = {
+                'board_id': $(this).data('board_id')
+            };
+
+            loadNewPostFrame(data.board_id, function() {
+
+            });
+        });
+    }
 
     function initBrowserHistoryEvents()
     {
@@ -233,6 +251,26 @@ export function initEvents()
                 initThreadListLastMsgFrames();
                 initThreadListReplyCountFrames();
                 initThreadListNavigation();
+
+                if(typeof callback === 'function')
+                    callback(response);
+            }
+        });
+    }
+
+    function loadNewPostFrame(board_id, callback)
+    {
+        $.ajax({
+            url: '/post/get-new-post-form-json',
+            data: {
+                'board_id': board_id
+            },
+            method: 'GET',
+            dataType: 'json'
+        }).done(function( response ) {
+            if(response.success===true) {
+                $('.postContainer .wrapper').html(response.message);
+                $('.postTreeContainer .wrapper').html('');
 
                 if(typeof callback === 'function')
                     callback(response);

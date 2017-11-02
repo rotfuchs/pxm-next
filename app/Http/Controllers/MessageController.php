@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Board\View\BoardHeaderView;
 use App\Services\Message\View\MessageFormView;
 use App\Services\Message\View\MessageTreeView;
 use App\Services\Message\View\MessageView;
@@ -23,7 +24,16 @@ class MessageController extends Controller
         $messageTreeView = new MessageTreeView();
         $messageTreeView->setThreadId($thread_id);
 
+        /** @var Thread $thread */
+        $thread = $this->threadQueryService->getSingle($thread_id);
+
+        $boardHeaderView = new BoardHeaderView();
+
+        if($thread instanceof Thread)
+            $boardHeaderView->board_id = $thread->board_id;
+
         return view('message.treeframe', [
+            'boardHeader' => $boardHeaderView,
             'messageTree' => $messageTreeView
         ]);
     }
@@ -36,7 +46,13 @@ class MessageController extends Controller
         /** @var Thread $thread */
         $thread = $this->threadQueryService->getSingle($messageView->thread_id);
 
+        $boardHeaderView = new BoardHeaderView();
+
+        if($thread instanceof Thread)
+            $boardHeaderView->board_id = $thread->board_id;
+
         return view('message.messageframe', [
+            'boardHeader' => $boardHeaderView,
             'message' => $messageView,
             'board_id' => ($thread instanceof Thread) ? $thread->board_id : -1,
             'thread_id' => $messageView->thread_id,
@@ -88,12 +104,26 @@ class MessageController extends Controller
         ]);
     }
 
-    public function getNewMessageView()
+    public function getNewMessageView($board_id)
     {
         $messageForm = new MessageFormView();
 
+        $boardHeaderView = new BoardHeaderView();
+        $boardHeaderView->board_id = $board_id;
+
         return view('message.newmessageframe', [
+            'boardHeader' => $boardHeaderView,
             'newMessageForm' => $messageForm.''
+        ]);
+    }
+
+    public function getNewMessageJson()
+    {
+        $messageForm = new MessageFormView();
+
+        return response()->json([
+            'success' => ($messageForm instanceof MessageFormView),
+            'message' => $messageForm.''
         ]);
     }
 }

@@ -4,12 +4,8 @@
     <div class="classicFrameset">
         <div class="threadViewContainer">
             <div class="wrapper">
-                <div class="header">
-                    <a href="/boards">
-                        <div class="banner"></div>
-                    </a>
-                    <div class="top-navigation">@include('layout.navigation.topnavigation')</div>
-                </div>
+                {!! $boardHeader !!}
+
                 <div class="threadList">
                     {!! $threadList !!}
                 </div>

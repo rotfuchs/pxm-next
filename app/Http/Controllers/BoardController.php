@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
+use App\Services\Board\View\BoardHeaderView;
 use App\Services\Board\View\BoardIndexTableRowView;
 use App\Services\Board\View\BoardThreadListView;
 use App\Services\Message\View\MessageFormView;
@@ -52,7 +53,11 @@ class BoardController extends Controller
 
         $messageForm = new MessageFormView();
 
+        $boardHeaderView = new BoardHeaderView();
+        $boardHeaderView->board_id = $id;
+
         return view('board.board', [
+            'boardHeader' => $boardHeaderView,
             'threadList' => $boardThreadListView,
             'messageTree' => $messageTreeView,
             'message' => $messageForm
@@ -65,7 +70,11 @@ class BoardController extends Controller
         $boardThreadListView->page = (int)$page;
         $boardThreadListView->setBoardId($board_id);
 
+        $boardHeaderView = new BoardHeaderView();
+        $boardHeaderView->board_id = $board_id;
+
         return view('board.boardframe', [
+            'boardHeader' => $boardHeaderView,
             'threadList' => $boardThreadListView,
         ]);
     }
@@ -99,7 +108,11 @@ class BoardController extends Controller
         $messageView = new MessageView();
         $messageView->setMessageId($post_id);
 
+        $boardHeaderView = new BoardHeaderView();
+        $boardHeaderView->board_id = $board_id;
+
         return view('board.board', [
+            'boardHeader' => $boardHeaderView,
             'threadList' => $boardThreadListView,
             'messageTree' => $messageTreeView,
             'message' => $messageView
