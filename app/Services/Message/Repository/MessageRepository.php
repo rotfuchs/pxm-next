@@ -23,6 +23,11 @@ class MessageRepository
         try {
             $select = $this->db->table('pxm_message');
 
+            if($filter->onlyTreeData === true)
+                $select = $select->select([
+                    'id', 'thread_id', 'parentid', 'user_id', 'usernickname', 'userhighlight', 'subject', 'tstmp'
+                ]);
+
             if(is_numeric($filter->message_id))
                 $select = $select->where('id', '=', $filter->message_id);
 

@@ -37,6 +37,7 @@ class MessageTreeView extends View
 
         $filter = new MessageFilter();
         $filter->thread_id = $thread_id;
+        $filter->onlyTreeData = true;
 
         return $messageQueryService->filter($filter);
     }
