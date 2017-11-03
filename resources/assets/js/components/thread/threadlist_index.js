@@ -22,6 +22,7 @@ export function initEvents()
         let header = $('div.header');
         let newPost = header.find('a.new-post');
         let search = header.find('a.search');
+        let userSearch = header.find('a.userSearch');
         let data;
 
         newPost.on('click', function(e) {
@@ -46,6 +47,12 @@ export function initEvents()
             loadSearchPostFrame(data.board_id, function() {
 
             });
+        });
+
+        userSearch.on('click', function(e) {
+            e.preventDefault();
+
+            loadUserSearchFrame(function() {});
         });
     }
 
@@ -304,6 +311,23 @@ export function initEvents()
         }).done(function( response ) {
             if(response.success===true) {
                 $('.threadViewContainer').find('.threadList').html(response.searchForm);
+
+                if(typeof callback === 'function')
+                    callback(response);
+            }
+        });
+    }
+
+    function loadUserSearchFrame(callback)
+    {
+        $.ajax({
+            url: '/user/get-user-search-form-json',
+            data: {},
+            method: 'GET',
+            dataType: 'json'
+        }).done(function( response ) {
+            if(response.success===true) {
+                $('.postContainer .wrapper').html(response.searchForm);
 
                 if(typeof callback === 'function')
                     callback(response);

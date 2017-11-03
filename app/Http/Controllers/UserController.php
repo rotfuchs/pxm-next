@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Services\User\Model\User;
 use App\Services\User\Query\UserQueryService;
 use App\Services\User\View\UserProfileView;
+use App\Services\User\View\UserSearchFormView;
 
 class UserController extends Controller
 {
@@ -30,5 +31,24 @@ class UserController extends Controller
             $userProfileView->layout = 'layout.user.profile';
 
         return $userProfileView->toView();
+    }
+
+    public function getSearchView()
+    {
+        $userSearchFormView = new UserSearchFormView();
+
+        return view('user.searchframe', [
+            'userSearch' => $userSearchFormView
+        ]);
+    }
+
+    public function getSearchJson()
+    {
+        $userSearchFormView = new UserSearchFormView();
+
+        return response()->json([
+            'success' => ($userSearchFormView instanceof UserSearchFormView),
+            'searchForm' => $userSearchFormView.''
+        ]);
     }
 }

@@ -11,7 +11,7 @@
                 <a class="search" href="/search/board/{{$board_id}}" data-board_id="{{$board_id}}">Suche</a>
             </div>
             <div class="item">
-                <a href="/user">User</a>
+                <a class="userSearch" href="/user">User</a>
             </div>
             <div class="item">
                 <a href="/useronline">Online?</a>

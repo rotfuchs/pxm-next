@@ -1,0 +1,64 @@
+/* ------------------------------------------------------
+ * /css/user/_search_form.scss START
+ * ------------------------------------------------------ */
+
+.userSearchContainer .userSearchForm {
+  display: flex;
+  border-left: 1px solid #c01425;
+  border-right: 1px solid #c01425;
+}
+
+.userSearchContainer .userSearchForm .form {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.userSearchContainer .userSearchForm .form input[type="text"],
+.userSearchContainer .userSearchForm .form input[type="submit"] {
+  border-style: groove;
+  min-width: 160px;
+  padding: 1px 0;
+  margin: 0 16px 0 5px;
+  box-sizing: border-box;
+}
+
+.userSearchContainer .userSearchForm .button {
+  background-color: #8f1425;
+}
+
+.userSearchContainer .userSearchForm .input {
+  font-weight: bold;
+  font-size: small;
+}
+
+.userSearchContainer .userSearchForm .input,
+.userSearchContainer .userSearchForm .button {
+  text-align: right;
+  border-bottom: 1px solid #c01425;
+  padding: 10px 0 0 0;
+  height: 45px;
+  box-sizing: border-box;
+}
+
+.userSearchContainer .userSearchForm .help {
+  border-left: 1px solid #c01425;
+  border-bottom: 1px solid #c01425;
+  height: 90px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
+.userSearchContainer .userSearchForm .help ul {
+  padding-left: 20px;
+  padding-bottom: 6px;
+}
+
+.userSearchContainer .userSearchForm .help .headline {
+  color: #ffff7c;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------
+ * /css/user/_search_form.scss END
+ * ------------------------------------------------------ */

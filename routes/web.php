@@ -41,5 +41,7 @@ Route::get('/search/get-search-form-json', 'SearchController@getSearchJson');
 
 Route::get('/faq', 'FaqController@getFaqIndexView');
 
+Route::get('/user', 'UserController@getSearchView');
 Route::get('/user/id/{user_id}/layout/{layout}', 'UserController@getUserView');
 Route::get('/user/id/{user_id}', 'UserController@getUserView');
+Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');

@@ -10,6 +10,8 @@ div.defaultHeader {
   font-size: small;
   font-weight: bold;
   line-height: 20px;
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 1.3pt;
 
   background: #b32537;
   background: -moz-linear-gradient(top, #b32537 0%, #8c1e2f 4%, #952031 12%, #982132 42%, #ab2435 62%, #bb2638 85%, #b92537 88%, #a41b2d 92%, #8e1929 96%, #b41d2f 100%);
@@ -33,6 +35,10 @@ div.defaultHeader {
 
 .underline {
   text-decoration: underline;
+}
+
+.highlight {
+  color: #ffff7c;
 }
 
 /* ------------------------------------------------------
