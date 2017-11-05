@@ -28,12 +28,6 @@
     <body>
         <div class="singlePage">
             <div class="wrapper">
-                <div class="header">
-                    <a href="/boards">
-                        <div class="banner"></div>
-                    </a>
-                    <div class="top-navigation">@include('layout.navigation.board-topnavigation')</div>
-                </div>
                 @yield('content')
             </div>
         </div>

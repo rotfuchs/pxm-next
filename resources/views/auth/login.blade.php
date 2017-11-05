@@ -1,14 +1,17 @@
 <div class="loginContainer">
     <div class="defaultHeader">
-        <span class="icon-arrow-right"></span> Login
+        <span class="icon-arrow-right"></span> {{$welcomeMessage}}
     </div>
 
+    @if(!$isLoggedIn)
     <div class="formContainer">
-        <form>
+        <form action="/user/authenticate-redirect" method="post">
+            {{ csrf_field() }}
+
             <div class="formElements">
                 <label>
                     Username:
-                    <input type="text" name="username" value="" placeholder="" />
+                    <input type="text" name="nickname" value="" placeholder="" />
                 </label>
                 <label>
                     Passwort:
@@ -22,6 +25,11 @@
                 Funktionen des Forums verfügbar.
             </div>
         </form>
+    </div>
+    @endif
+
+    <div class="loginInfo @if(!$showError)noDisplay @endif">
+        Passwort oder Benutzername ungültig, versuch's nochmal Jim.
     </div>
 
     <div class="loginFooter">

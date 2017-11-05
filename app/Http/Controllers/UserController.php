@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Services\User\Model\User;
 use App\Services\User\Query\UserQueryService;
 use App\Services\User\View\UserProfileView;
@@ -50,5 +49,36 @@ class UserController extends Controller
             'success' => ($userSearchFormView instanceof UserSearchFormView),
             'searchForm' => $userSearchFormView.''
         ]);
+    }
+
+    public function getLogoutRedirect()
+    {
+        \Auth::logout();
+        session()->flush();
+
+        return redirect()->to('/boards');
+    }
+
+    public function postAuthenticateJson()
+    {
+        $isUserValid = \Auth::validate(request()->all());
+
+        $success = ($isUserValid && !\Auth::check() && \Auth::attempt(request()->all()));
+
+        return response()->json([
+            'success' => $success
+        ]);
+    }
+
+    public function postAuthenticateRedirect()
+    {
+        $isUserValid = \Auth::validate(request()->all());
+
+        $success = ($isUserValid && !\Auth::check() && \Auth::attempt(request()->all()));
+
+        if($success)
+            return redirect()->to('/boards');
+
+        return redirect()->to('/boards?loginError=visible');
     }
 }

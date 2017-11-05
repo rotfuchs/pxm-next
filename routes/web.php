@@ -42,6 +42,22 @@ Route::get('/search/get-search-form-json', 'SearchController@getSearchJson');
 Route::get('/faq', 'FaqController@getFaqIndexView');
 
 Route::get('/user', 'UserController@getSearchView');
+Route::get('/user/logout', 'UserController@getLogoutRedirect');
 Route::get('/user/id/{user_id}/layout/{layout}', 'UserController@getUserView');
 Route::get('/user/id/{user_id}', 'UserController@getUserView');
 Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');
+
+
+//Route::get('/user/login', 'sx\AuthController@getLoginView');
+//Route::get('/user/logout', 'sx\AuthController@getLogoutView');
+
+//Route::post('/user/registrations', 'sx\AuthController@postIsUserValid');
+//Route::post('/user/index/result/json', 'sx\AuthController@xhrGetAvailableClientsForUser');
+//Route::post('/user/login', 'sx\AuthController@postLogin');
+Route::post('/user/authenticate', 'UserController@postAuthenticateJson');
+Route::post('/user/authenticate-redirect', 'UserController@postAuthenticateRedirect');
+
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

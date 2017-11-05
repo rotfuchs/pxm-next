@@ -3,8 +3,9 @@
 namespace App\Services\User\Model;
 
 use App\Extras\Database\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class User extends Model
+class User extends Model implements Authenticatable
 {
     protected $tableName = 'pxm_user';
 
@@ -13,6 +14,7 @@ class User extends Model
     public $password;
     public $passwordkey;
     public $ticket;
+    public $remember_token;
     public $firstname;
     public $lastname;
     public $city;
@@ -71,5 +73,35 @@ class User extends Model
     public function getFullName()
     {
         return $this->firstname .' '. $this->lastname;
+    }
+
+    public function getAuthIdentifierName()
+    {
+        return 'id';
+    }
+
+    public function getAuthIdentifier()
+    {
+        return $this->id;
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
+
+    public function getRememberToken()
+    {
+        return $this->remember_token;
+    }
+
+    public function setRememberToken($value)
+    {
+        $this->remember_token = $value;
+    }
+
+    public function getRememberTokenName()
+    {
+        return 'remember_token';
     }
 }

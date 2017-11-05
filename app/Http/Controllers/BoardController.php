@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
+use App\Services\Board\View\BoardHeader2View;
 use App\Services\Board\View\BoardHeaderView;
 use App\Services\Board\View\BoardIndexTableRowView;
 use App\Services\Board\View\BoardThreadListView;
@@ -11,6 +12,7 @@ use App\Services\Message\View\MessageFormView;
 use App\Services\Message\View\MessageTreeView;
 use App\Services\Message\View\MessageView;
 use App\Services\Thread\Query\ThreadQueryService;
+use App\Services\User\View\UserLoginFormView;
 
 class BoardController extends Controller
 {
@@ -40,8 +42,14 @@ class BoardController extends Controller
             $boards[] = $tableRowView;
         }
 
+        $userLoginView = new UserLoginFormView();
+        $userLoginView->showError = (request()->get('loginError')=='visible');
 
-        return view('board.index', ['boards' => $boards]);
+        return view('board.index', [
+            'boards' => $boards,
+            'loginView' => $userLoginView,
+            'boardHeaderView' => new BoardHeader2View()
+        ]);
     }
 
     public function getBoardView($id)

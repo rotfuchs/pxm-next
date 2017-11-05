@@ -3,7 +3,9 @@
 @section('title', trans('board.title'))
 
 @section('content')
-    @include('auth.login')
+    {!! $boardHeaderView !!}
+
+    {!! $loginView !!}
 
     <div class="boardIndex">
         <div class="defaultHeader">

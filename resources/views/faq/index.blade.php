@@ -3,6 +3,8 @@
 @section('title', trans('faq.title'))
 
 @section('content')
+    {!! $boardHeaderView !!}
+
     <div class="faqContainer">
         <div class="headline1">{{trans('faq.title')}}</div>
 

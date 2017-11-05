@@ -60,6 +60,16 @@
   flex: 1;
 }
 
+.loginContainer .loginInfo {
+  background-color: #8f1425;
+  border-bottom: 1px solid #c01425;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+  color: #ffff7c;
+  padding: 4px 0 6px 0;
+}
+
 /* ------------------------------------------------------
  * /css/auth/login_form.css END
  * ------------------------------------------------------ */
