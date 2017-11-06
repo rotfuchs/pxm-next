@@ -7,6 +7,16 @@
             <div class="item">
                 <a class="new-post" href="/post/new/board/{{$board_id}}" data-board_id="{{$board_id}}">Neuer Beitrag</a>
             </div>
+
+            @if($isUserLoggedIn)
+            <div class="item">
+                <a href="">Setup</a>
+            </div>
+            <div class="item">
+                <a href="">Mailbox</a>
+            </div>
+            @endif
+
             <div class="item">
                 <a class="search" href="/search/board/{{$board_id}}" data-board_id="{{$board_id}}">Suche</a>
             </div>
@@ -16,12 +26,21 @@
             <div class="item">
                 <a href="/useronline">Online?</a>
             </div>
+
+            @if(!$isUserLoggedIn)
             <div class="item">
                 <a href="/register">Registrierung</a>
             </div>
             <div class="item">
                 <a href="/boards">Login</a>
             </div>
+            @endif
+
+            @if($isUserLoggedIn)
+                <div class="item">
+                    <a href="/user/logout">Logout</a>
+                </div>
+            @endif
         </div>
     </div>
 </div>

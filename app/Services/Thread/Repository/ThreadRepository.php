@@ -6,6 +6,7 @@ use App\Extras\Database\DbAdapter;
 use App\Extras\Message\MessageCollector;
 use App\Services\Thread\Model\Thread;
 use App\Services\Thread\Repository\Filter\ThreadsFilter;
+use Illuminate\Database\Query\JoinClause;
 
 class ThreadRepository
 {
@@ -36,6 +37,29 @@ class ThreadRepository
 
             if($filter->showFixed==false)
                 $select = $select->where('fixed', '=', 0);
+
+            if(is_numeric($filter->messageread_user_id) && $filter->messageread_user_id>0) {
+                $select = $select
+                    ->leftJoin('pxm_messageread',function($join) use ($filter) {
+                        /** @var JoinClause $join */
+                        $join
+                            ->where('pxm_messageread.user_id', '=', $filter->messageread_user_id)
+                            ->where('pxm_messageread.parent_id', '=', 0)
+                            ->on('pxm_messageread.thread_id', '=', 'pxm_thread.id');
+                    })
+                    ->selectRaw('(`pxm_messageread`.id is NULL) as `unread`');
+
+                $select = $select
+                    ->leftJoin('pxm_messageread as pxm_messageread2',function($join) use ($filter) {
+                        /** @var JoinClause $join */
+                        $join
+                            ->where('pxm_messageread2.user_id', '=', $filter->messageread_user_id)
+                            ->on('pxm_messageread2.id', '=', 'pxm_thread.lastmsgid')
+                            ->on('pxm_messageread2.thread_id', '=', 'pxm_thread.id');
+                    })
+                    ->selectRaw('(`pxm_messageread2`.id is NULL) as `unread_last_msg`');
+
+            }
 
             if(strlen($filter->orderField)>0)
                 $select = $select->orderBy($filter->orderField, $filter->orderSort);

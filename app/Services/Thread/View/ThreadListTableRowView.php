@@ -11,7 +11,7 @@ class ThreadListTableRowView extends View
     public $board_id;
     public $post_id;
     public $thread_id;
-    public $threadClass;
+    public $threadClasses = [];
     public $topic;
     public $author;
     public $createdDateTime;
@@ -19,6 +19,7 @@ class ThreadListTableRowView extends View
     public $replyCount;
     public $lastMsgDateTime;
     public $lastMsgId;
+    public $lastMsgClasses = [];
 
     protected $viewName = 'board.components.board.tablerow';
 
@@ -27,7 +28,10 @@ class ThreadListTableRowView extends View
         $this->board_id = $thread->board_id;
         $this->post_id = $thread->getRawValue('post_id');
         $this->thread_id = $thread->id;
-        $this->threadClass = ($thread->fixed) ? 'fixed' : '';
+
+        if($thread->fixed)
+            $this->threadClasses[] = 'fixed';
+
         $this->topic = $thread->getRawValue('subject');
 
         $userLinkView = new UserNameLinkView();
@@ -40,5 +44,11 @@ class ThreadListTableRowView extends View
         $this->replyCount = $thread->msgquantity;
         $this->lastMsgDateTime = date(\Config::get('app.date_format'), $thread->lastmsgtstmp);
         $this->lastMsgId = $thread->lastmsgid;
+
+        if($thread->getRawValue('unread')===1)
+            $this->threadClasses[] = 'unread';
+
+        if($thread->getRawValue('unread_last_msg')===1)
+            $this->lastMsgClasses[] = 'unread';
     }
 }

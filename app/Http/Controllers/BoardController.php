@@ -106,15 +106,15 @@ class BoardController extends Controller
     {
         $pageNumber = $this->threadQueryService->getPageNumberForThread($thread_id, $board_id);
 
-        $boardThreadListView = new BoardThreadListView();
-        $boardThreadListView->page = $pageNumber;
-        $boardThreadListView->setBoardId($board_id);
+        $messageView = new MessageView();
+        $messageView->setMessageId($post_id);
 
         $messageTreeView = new MessageTreeView();
         $messageTreeView->setThreadId($thread_id);
 
-        $messageView = new MessageView();
-        $messageView->setMessageId($post_id);
+        $boardThreadListView = new BoardThreadListView();
+        $boardThreadListView->page = $pageNumber;
+        $boardThreadListView->setBoardId($board_id);
 
         $boardHeaderView = new BoardHeaderView();
         $boardHeaderView->board_id = $board_id;

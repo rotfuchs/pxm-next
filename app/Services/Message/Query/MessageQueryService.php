@@ -2,6 +2,7 @@
 
 namespace App\Services\Message\Query;
 
+use App\Events\Message\LoadSingleMessageEvent;
 use App\Services\Message\Model\Message;
 use App\Services\Message\Repository\Filter\MessageFilter;
 use App\Services\Message\Repository\MessageRepository;
@@ -29,6 +30,8 @@ class MessageQueryService
 
         if(!is_array($messages) || count($messages)!=1 || !isset($messages[0]) || !($messages[0] instanceof Message))
             return false;
+
+        event(new LoadSingleMessageEvent($messages[0]));
 
         return $messages[0];
     }

@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'Illuminate\Auth\Events\Login' => [
             'App\Listeners\Auth\CreateUserSessionListener',
         ],
+        'App\Events\Message\LoadSingleMessageEvent' => [
+            'App\Listeners\MarkMessageAsReadListener'
+        ]
     ];
 
     /**

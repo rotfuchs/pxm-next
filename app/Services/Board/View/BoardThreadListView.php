@@ -9,6 +9,7 @@ use App\Services\Thread\Model\Thread;
 use App\Services\Thread\Query\ThreadQueryService;
 use App\Services\Thread\Repository\Filter\ThreadsFilter;
 use App\Services\Thread\View\ThreadListTableRowView;
+use App\Services\User\Model\User;
 
 class BoardThreadListView extends View
 {
@@ -53,6 +54,14 @@ class BoardThreadListView extends View
         $filter->board_id = $board_id;
         $filter->limit = $this->limit;
         $filter->offset = $this->limit * $this->page;
+
+        if(\Auth::check()) {
+            /** @var User $user */
+            $user = \Auth::getUser();
+
+            $filter->messageread_user_id = $user->id;
+        }
+
 
         return $threadQueryService->filter($filter);
     }

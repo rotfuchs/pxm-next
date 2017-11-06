@@ -74,6 +74,11 @@ table.threads td.lastMsg a:visited {
   color: #f0888a;
 }
 
+table.threads td.topic a.unread,
+table.threads td.lastMsg a.unread {
+  color: #ffffff;
+}
+
 table.threads td.topic a:active,
 table.threads td.lastMsg a:active {
   color: #ffff7c;
