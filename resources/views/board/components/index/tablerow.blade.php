@@ -1,7 +1,7 @@
 <tr>
     <td>
         <div>
-            <a href="/board/id/{{$id}}" class="name">{{$name}}</a>
+            <a href="/board/id/{{$id}}/{{$slug}}" class="name">{{$name}}</a>
         </div>
         <div>{{$description}}</div>
     </td>

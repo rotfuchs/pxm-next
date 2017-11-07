@@ -1,7 +1,7 @@
 <div class="message" data-post_id="{{$post_id}}">
     <div class="defaultHeader">
         <div class="topic">Thema: <span>{{$subject}}</span></div>
-        <div class="created">Datum: <span><a href="/post/id/{{$post_id}}">{{$createdDateTime}} Uhr</a></span></div>
+        <div class="created">Datum: <span><a href="/post/id/{{$post_id}}/{{$slug}}">{{$createdDateTime}} Uhr</a></span></div>
     </div>
     @if($isReply)
     <div class="replyInfo">

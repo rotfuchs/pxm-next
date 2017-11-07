@@ -20,6 +20,7 @@ class BoardThreadListView extends View
     public $page = 0;
     public $prevPage;
     public $nextPage;
+    public $slug;
 
     protected $viewName = 'board.components.board.table';
 
@@ -43,6 +44,7 @@ class BoardThreadListView extends View
 
         $this->nextPage = $this->page + 1;
         $this->prevPage = $this->page - 1;
+        $this->slug = str_slug($board->name);
     }
 
     private function getThreads($board_id)

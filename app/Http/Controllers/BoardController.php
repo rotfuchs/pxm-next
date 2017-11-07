@@ -52,10 +52,16 @@ class BoardController extends Controller
         ]);
     }
 
-    public function getBoardView($id)
+    public function getBoardView($id, $slug = null)
     {
         $boardThreadListView = new BoardThreadListView();
         $boardThreadListView->setBoardId($id);
+
+        if($slug != $boardThreadListView->slug)
+            return redirect()->to(action('BoardController@getBoardView', [
+                $id,
+                $boardThreadListView->slug
+            ]));
 
         $messageTreeView = new MessageTreeView();
 
@@ -72,11 +78,18 @@ class BoardController extends Controller
         ]);
     }
 
-    public function getBoardPageView($board_id, $page)
+    public function getBoardPageView($board_id, $page, $slug = null)
     {
         $boardThreadListView = new BoardThreadListView();
         $boardThreadListView->page = (int)$page;
         $boardThreadListView->setBoardId($board_id);
+
+        if($slug != $boardThreadListView->slug)
+            return redirect()->to(action('BoardController@getBoardPageView', [
+                $board_id,
+                $page,
+                $boardThreadListView->slug
+            ]));
 
         $boardHeaderView = new BoardHeaderView();
         $boardHeaderView->board_id = $board_id;

@@ -17,6 +17,7 @@ class BoardIndexTableRowView extends View
     public $description;
     public $lastMsgDateTime;
     public $modList = [];
+    public $slug;
 
     protected $viewName = 'board.components.index.tablerow';
 
@@ -26,6 +27,7 @@ class BoardIndexTableRowView extends View
         $this->name = $board->name;
         $this->description = $board->description;
         $this->lastMsgDateTime = date(\Config::get('app.date_format'), $board->lastmsgtstmp);
+        $this->slug = str_slug($board->name);
 
         foreach($this->getModUserForBoard($this->id) as $user) {
             /** @var User $user */
