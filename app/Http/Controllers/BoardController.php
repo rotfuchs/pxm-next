@@ -102,12 +102,20 @@ class BoardController extends Controller
         ]);
     }
 
-    public function getBoardPostView($board_id, $thread_id, $post_id)
+    public function getBoardPostView($board_id, $thread_id, $post_id, $slug = null)
     {
         $pageNumber = $this->threadQueryService->getPageNumberForThread($thread_id, $board_id);
 
         $messageView = new MessageView();
         $messageView->setMessageId($post_id);
+
+        if($slug != $messageView->slug)
+            return redirect()->to(action('BoardController@getBoardPostView', [
+                $board_id,
+                $thread_id,
+                $post_id,
+                $messageView->slug
+            ]));
 
         $messageTreeView = new MessageTreeView();
         $messageTreeView->setThreadId($thread_id);

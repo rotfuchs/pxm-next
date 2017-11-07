@@ -25,7 +25,8 @@ class ThreadRepository
             $select = $this->db
                 ->table('pxm_thread')
                 ->join('pxm_message', 'pxm_thread.id', '=','pxm_message.thread_id')
-                ->select('pxm_thread.*', 'pxm_message.usernickname', 'pxm_message.subject', 'pxm_message.tstmp', 'pxm_message.user_id', 'pxm_message.id as post_id')
+                ->join('pxm_message as pxm_message2', 'pxm_thread.lastmsgid', '=','pxm_message2.id')
+                ->select('pxm_thread.*', 'pxm_message.usernickname', 'pxm_message.subject', 'pxm_message.tstmp', 'pxm_message.user_id', 'pxm_message.id as post_id', 'pxm_message2.subject as lastMsgSubject')
                 ->where('pxm_message.parentid' , '=', 0)
                 ->orderByDesc('pxm_thread.fixed');
 

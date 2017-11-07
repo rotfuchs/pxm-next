@@ -13,6 +13,7 @@ class MessageTreeItemView extends View
     public $userName;
     public $createdDateTime;
     public $children = [];
+    public $slug;
 
     protected $viewName = 'message.components.tree.treeitem';
 
@@ -31,6 +32,7 @@ class MessageTreeItemView extends View
         $this->userName = $message->usernickname;
         $this->createdDateTime = date(\Config::get('app.date_format'), $message->tstmp);
         $this->children = self::getChildren($message->id);
+        $this->slug = str_slug($message->subject);
     }
 
     public static function getFirstMessage()

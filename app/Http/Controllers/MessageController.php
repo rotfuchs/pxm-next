@@ -19,10 +19,16 @@ class MessageController extends Controller
     }
 
     //
-    public function getMessageTreeView($thread_id)
+    public function getMessageTreeView($thread_id, $slug = null)
     {
         $messageTreeView = new MessageTreeView();
         $messageTreeView->setThreadId($thread_id);
+
+        if($slug != $messageTreeView->slug)
+            return redirect()->to(action('MessageController@getMessageTreeView', [
+                $thread_id,
+                $messageTreeView->slug
+            ]));
 
         /** @var Thread $thread */
         $thread = $this->threadQueryService->getSingle($thread_id);
@@ -38,10 +44,16 @@ class MessageController extends Controller
         ]);
     }
 
-    public function getMessageView($post_id)
+    public function getMessageView($post_id, $slug = null)
     {
         $messageView = new MessageView();
         $messageView->setMessageId($post_id);
+
+        if($slug != $messageView->slug)
+            return redirect()->to(action('MessageController@getMessageView', [
+                $post_id,
+                $messageView->slug
+            ]));
 
         /** @var Thread $thread */
         $thread = $this->threadQueryService->getSingle($messageView->thread_id);
@@ -56,7 +68,8 @@ class MessageController extends Controller
             'message' => $messageView,
             'board_id' => ($thread instanceof Thread) ? $thread->board_id : -1,
             'thread_id' => $messageView->thread_id,
-            'post_id' => $post_id
+            'post_id' => $post_id,
+            'slug' => $messageView->slug
         ]);
     }
 

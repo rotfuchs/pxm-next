@@ -89,6 +89,8 @@ export function initEvents()
             e.preventDefault();
             el = $(this);
 
+            el.removeClass('unread');
+
             data = {
                 'thread_id': $(this).data('thread_id'),
                 'post_id': $(this).data('post_id')
@@ -109,6 +111,8 @@ export function initEvents()
         lastMsgs.on('click', function(e) {
             e.preventDefault();
             el = $(this);
+
+            el.removeClass('unread');
 
             data = {
                 'thread_id': $(this).data('thread_id'),
@@ -173,6 +177,8 @@ export function initEvents()
         posts.on('click', function(e) {
             e.preventDefault();
             el = $(this);
+
+            el.removeClass('unread');
 
             data = {
                 'thread_id': $(this).data('thread_id'),

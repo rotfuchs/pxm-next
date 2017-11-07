@@ -18,6 +18,7 @@ class MessageView extends View
     public $replyMessageId;
     public $replySubject;
     public $replyUserName;
+    public $slug;
 
     protected $viewName = 'message.message';
 
@@ -31,6 +32,7 @@ class MessageView extends View
         $this->post_id = $message->id;
         $this->thread_id = $message->thread_id;
         $this->subject = $message->subject;
+        $this->slug = str_slug($message->subject);
         $this->userName = $message->usernickname;
         $this->content = $message->getCleanBody();
         $this->createdDateTime = date(\Config::get('app.date_format'), $message->tstmp);

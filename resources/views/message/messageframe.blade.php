@@ -7,7 +7,7 @@
 
             {!! $message !!}
             <div class="secondMessageFoot">
-                <a href="/board/id/{{$board_id}}/thread/{{$thread_id}}/post/{{$post_id}}">Gesamten Thread anzeigen</a>
+                <a href="/board/id/{{$board_id}}/thread/{{$thread_id}}/post/{{$post_id}}/{{$slug}}">Gesamten Thread anzeigen</a>
             </div>
         </div>
     </div>

@@ -13,6 +13,7 @@ class MessageTreeView extends View
     public $userName;
     public $subject;
     public $children = [];
+    public $slug;
 
     protected $viewName = 'message.tree';
 
@@ -28,6 +29,7 @@ class MessageTreeView extends View
         $this->userName = $firstMessage->usernickname;
         $this->subject = $firstMessage->subject;
         $this->children = MessageTreeItemView::getChildren($firstMessage->id);
+        $this->slug = str_slug($firstMessage->subject);
     }
 
     private function getMessages($thread_id)
