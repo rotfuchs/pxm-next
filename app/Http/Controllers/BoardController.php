@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Board\Model\Board;
 use App\Services\Board\Query\BoardQueryService;
 use App\Services\Board\Repository\Filter\BoardFilter;
 use App\Services\Board\View\BoardHeader2View;
@@ -26,6 +27,24 @@ class BoardController extends Controller
     {
         $this->boardQueryService = $boardQueryService;
         $this->threadQueryService = $threadQueryService;
+    }
+
+    public function getBoardRedirect()
+    {
+        $board_id = request()->get('id');
+
+        if(!is_numeric($board_id) || $board_id<=0)
+            return redirect()->to('/boards');
+
+        $board = $this->boardQueryService->getSingle($board_id);
+
+        if(!($board instanceof Board))
+            return redirect()->to('/boards');
+
+        return redirect()->to(action('BoardController@getBoardView', [
+            $board_id,
+            str_slug($board->name)
+        ]));
     }
 
     //

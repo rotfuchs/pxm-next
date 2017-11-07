@@ -26,6 +26,7 @@ Route::get('/board/id/{id}/page/{page}/{slug?}', 'BoardController@getBoardPageVi
 Route::get('/board/id/{id}/{slug?}', 'BoardController@getBoardView');
 Route::get('/board/id/{board_id}/thread/{thread_id}/post/{post_id}/{slug?}', 'BoardController@getBoardPostView');
 Route::get('/board/get-thread-list-json', 'BoardController@getBoardPageJson');
+Route::get('/board', 'BoardController@getBoardRedirect');
 
 Route::get('/thread/get-tree-json', 'MessageController@getTreeJson');
 Route::get('/thread/get-message-tree-json', 'MessageController@getMessageTreeJson');

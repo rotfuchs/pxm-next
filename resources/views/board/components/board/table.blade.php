@@ -1,9 +1,15 @@
 <div class="defaultHeader">
-    Thread-Index: <span class="category">{{$name}}</span> |
+    Thread-Index: <span class="highlight">{{$name}}</span> |
     Rubrik
-    <select>
-        <option></option>
-    </select>
+    <form action="/board" method="get" name="switchBoardTopForm" class="switchBoardForm">
+        <select name="id" onchange="document.switchBoardTopForm.submit();">
+            <option>wechseln...</option>
+            @foreach($boards as $board)
+                <?php /** @var \App\Services\Board\Model\Board $board */ ?>
+                <option value="{{$board->id}}" @if($board->id==$id) class="current" @endif>{{$board->name}}</option>
+            @endforeach
+        </select>
+    </form>
 </div>
 <table class="default threads">
     <thead>
@@ -26,9 +32,15 @@
         <tr>
             <td colspan="2" class="info">
                 Thread-Index: <span class="category">{{$name}}</span> | Rubrik
-                <select>
-                    <option></option>
-                </select>
+                <form action="/board" method="get" name="switchBoardBottomForm" class="switchBoardForm">
+                    <select name="id" onchange="document.switchBoardBottomForm.submit();">
+                        <option>wechseln...</option>
+                        @foreach($boards as $board)
+                            <?php /** @var \App\Services\Board\Model\Board $board */ ?>
+                            <option value="{{$board->id}}" @if($board->id==$id) class="current" @endif>{{$board->name}}</option>
+                        @endforeach
+                    </select>
+                </form>
             </td>
             <td colspan="4" class="navigation">
                 @if($prevPage>=0)

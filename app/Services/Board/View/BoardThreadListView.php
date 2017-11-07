@@ -5,6 +5,7 @@ namespace App\Services\Board\View;
 use App\Extras\View\View;
 use App\Services\Board\Model\Board;
 use App\Services\Board\Query\BoardQueryService;
+use App\Services\Board\Repository\Filter\BoardFilter;
 use App\Services\Thread\Model\Thread;
 use App\Services\Thread\Query\ThreadQueryService;
 use App\Services\Thread\Repository\Filter\ThreadsFilter;
@@ -21,11 +22,14 @@ class BoardThreadListView extends View
     public $prevPage;
     public $nextPage;
     public $slug;
+    public $boards;
 
     protected $viewName = 'board.components.board.table';
 
     public function setBoardId($id)
     {
+        $this->boards = $this->getAllBoards();
+
         $board = $this->getBoard($id);
 
         if(!($board instanceof Board))
@@ -68,18 +72,36 @@ class BoardThreadListView extends View
         return $threadQueryService->filter($filter);
     }
 
-    private function getBoard($board_id)
+    private function getAllBoards()
     {
         /** @var BoardQueryService $boardQueryService */
         $boardQueryService = \App::make(BoardQueryService::class);
 
-        /** @var Board $board */
-        $board = $boardQueryService->getSingle($board_id);
+        $filter = new BoardFilter();
+        $filter->active = 1;
 
-        if(!($board instanceof Board) || !$board->active)
+        /** @var Board[] $boards */
+        $boards = $boardQueryService->filter($filter);
+
+        if(!is_array($boards))
             return false;
 
-        return $board;
+        return $boards;
+    }
+
+    private function getBoard($board_id)
+    {
+        if(!is_array($this->boards))
+            $this->boards = $this->getAllBoards();
+
+        if(!is_array($this->boards))
+            return false;
+
+        foreach($this->boards as $board)
+            if($board->id==$board_id)
+                return $board;
+
+        return false;
     }
 
 }
