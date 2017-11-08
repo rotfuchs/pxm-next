@@ -44,6 +44,7 @@ Route::get('/faq', 'FaqController@getFaqIndexView');
 
 Route::get('/user', 'UserController@getSearchView');
 Route::get('/user/logout', 'UserController@getLogoutRedirect');
+Route::get('/user/setup/{layout?}', 'UserController@getSetupView');
 Route::get('/user/id/{user_id}/layout/{layout}', 'UserController@getUserView');
 Route::get('/user/id/{user_id}', 'UserController@getUserView');
 Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');

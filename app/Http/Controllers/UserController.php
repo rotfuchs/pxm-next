@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Board\View\BoardHeader2View;
 use App\Services\User\Model\User;
 use App\Services\User\Query\UserQueryService;
 use App\Services\User\View\UserProfileView;
 use App\Services\User\View\UserSearchFormView;
+use App\Services\User\View\UserSetupView;
 
 class UserController extends Controller
 {
@@ -39,6 +41,29 @@ class UserController extends Controller
         return view('user.searchframe', [
             'userSearch' => $userSearchFormView
         ]);
+    }
+
+    public function getSetupView($layout = false)
+    {
+        if(!\Auth::check())
+            return view('auth.access_denied');
+
+        /** @var User $user */
+        $user = \Auth::getUser();
+        $dbUser = $this->userQueryService->getSingle($user->id);
+
+        if(!($user instanceof User))
+            return view('user.not_found');
+
+        $userSetupView = new UserSetupView();
+        $userSetupView->setUser($dbUser);
+
+        if($layout!='new_window') {
+            $userSetupView->boardHeaderView = new BoardHeader2View();
+            $userSetupView->layout = 'layout.app';
+        }
+
+        return $userSetupView->toView();
     }
 
     public function getSearchJson()
