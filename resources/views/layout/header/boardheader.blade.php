@@ -10,7 +10,7 @@
 
             @if($isUserLoggedIn)
             <div class="item">
-                <a href="">Setup</a>
+                <a href="/user/setup">Setup</a>
             </div>
             <div class="item">
                 <a href="">Mailbox</a>

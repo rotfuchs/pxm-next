@@ -1,0 +1,110 @@
+/* ------------------------------------------------------
+ * /css/user/_user_setup.scss START
+ * ------------------------------------------------------ */
+
+div.userSetupContainer {
+  margin: 0 10px;
+  min-width: 615px;
+}
+
+div.userSetupContainer .defaultHeader.tabHeader {
+  display: flex;
+  padding: 0;
+}
+
+div.userSetupContainer .tabHeader .tab {
+  flex: 1;
+  text-align: center;
+  padding: 4px;
+}
+
+div.userSetupContainer .tabHeader .tab:nth-child(1) {
+  border-right: 1px solid #c01425;
+}
+
+div.userSetupContainer .tabHeader .tab:nth-child(3) {
+  border-left: 1px solid #c01425;
+}
+
+div.userSetupContainer .tabHeaderAddon {
+  border: 1px solid #c01425;
+  border-top: 0;
+  background-color: #8f1425;
+  height: 12px;
+}
+
+div.userSetupContainer form .defaultHeader {
+  text-align: center;
+  color: #ffff7c;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+div.userSetupContainer .row {
+  display: flex;
+  border: 1px solid #c01425;
+  border-top: 0;
+  background-color: #8f1425;
+
+  font-size: small;
+  font-weight: bold;
+}
+
+div.userSetupContainer .row div {
+  padding: 4px;
+}
+
+div.userSetupContainer .row .info {
+  font-size: x-small;
+  font-weight: normal;
+  padding: 0;
+}
+
+div.userSetupContainer .row .firstlabel {
+  width: 200px;
+  text-align: right;
+  border-right: 1px solid #c01425;
+}
+
+div.userSetupContainer .row .secLabel {
+  width: 100px;
+  text-align: right;
+  border-left: 1px solid #c01425;
+  border-right: 1px solid #c01425;
+}
+
+div.userSetupContainer .row .option {
+  flex: 1;
+}
+
+div.userSetupContainer .row .option input[type="text"],
+div.userSetupContainer .row .option textarea {
+  width: calc(100% - 10px);
+  min-width: 130px;
+  border-style: groove;
+  padding: 1px;
+}
+
+div.userSetupContainer .row .option textarea {
+  width: calc(100% - 8px);
+  resize: vertical;
+}
+
+div.userSetupContainer .row.buttons {
+  text-align: center;
+  display: block;
+  padding: 7px;
+}
+
+div.userSetupContainer .row input[type="button"],
+div.userSetupContainer .row input[type="reset"] {
+  border-style: groove;
+  padding: 2px 4px;
+  margin: 0 20px;
+  font-family: Verdana, Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------
+ * /css/user/_user_setup.scss END
+ * ------------------------------------------------------ */
