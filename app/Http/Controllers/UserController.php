@@ -66,6 +66,28 @@ class UserController extends Controller
         return $userSetupView->toView();
     }
 
+    public function getSetupTabView($tab)
+    {
+        if(!\Auth::check())
+            return view('auth.access_denied');
+
+        /** @var User $user */
+        $user = \Auth::getUser();
+        $dbUser = $this->userQueryService->getSingle($user->id);
+
+        if(!($user instanceof User))
+            return view('user.not_found');
+
+        $userSetupView = new UserSetupView();
+        $userSetupView->setUser($dbUser);
+        $userSetupView->setVisibleTab($tab);
+
+        $userSetupView->boardHeaderView = new BoardHeader2View();
+        $userSetupView->layout = 'layout.app';
+
+        return $userSetupView->toView();
+    }
+
     public function getSearchJson()
     {
         $userSearchFormView = new UserSearchFormView();

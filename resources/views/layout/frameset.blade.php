@@ -26,7 +26,7 @@
     <!-- Styles -->
 </head>
 
-<body>
+<body class="{{get_body_layout_class()}}">
     @yield('content')
 </body>
 </html>

@@ -25,7 +25,7 @@
         <!-- Styles -->
     </head>
 
-    <body>
+    <body class="{{get_body_layout_class()}}">
         <div class="singlePage">
             <div class="wrapper">
                 @yield('content')

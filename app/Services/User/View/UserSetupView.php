@@ -9,6 +9,10 @@ class UserSetupView extends View
 {
     public $boardHeaderView;
 
+    public $profileTabClass = 'visible';
+    public $passwordTabClass;
+    public $extrasTabClass;
+
     public $username;
     public $firstName;
     public $lastName;
@@ -33,6 +37,8 @@ class UserSetupView extends View
     public $dvdProfilerUrl;
     public $favoriteMovieGenres;
     public $favoriteMovies;
+
+    public $userLayout;
 
     public $layout = 'layout.user.profile';
 
@@ -64,5 +70,31 @@ class UserSetupView extends View
         $this->dvdProfilerUrl = $user->profile_dvdprofile;
         $this->favoriteMovieGenres = $user->profile_liebfgenre;
         $this->favoriteMovies = $user->profile_liebfilme;
+
+        $this->userLayout = $user->layout;
+    }
+
+    public function setVisibleTab($name)
+    {
+        switch($name)
+        {
+            case 'password':
+                $this->profileTabClass = '';
+                $this->passwordTabClass = 'visible';
+                $this->extrasTabClass = '';
+                break;
+
+            case 'extras':
+                $this->profileTabClass = '';
+                $this->passwordTabClass = '';
+                $this->extrasTabClass = 'visible';
+                break;
+
+            default:
+                $this->profileTabClass = 'visible';
+                $this->passwordTabClass = '';
+                $this->extrasTabClass = '';
+                break;
+        }
     }
 }

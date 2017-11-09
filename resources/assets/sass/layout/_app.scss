@@ -29,11 +29,25 @@ a:hover {
   border-right: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   background-color: #A51425;
-  box-shadow: 20px 0 75px -10px #000000;
+  box-shadow: 0px -1px 35px 20px rgba(0,0,0,0.75);
   display: block;
   width: 778px;
   //height: 100vh;
 }
+
+@media (min-width: 778px) {
+  body.layout3 .wrapper {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  body.layout2 .wrapper {
+    width: 950px;
+    margin-left: 40px;
+  }
+}
+
 
 .singlePage .wrapper {
   height: 100vh;
