@@ -49,6 +49,23 @@ div.defaultHeader {
   display: none;
 }
 
+select {
+  width: 150px;
+  font-size: 8pt;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #c01425;
+}
+
+select:disabled {
+  background-color: #8f1425;
+  cursor: not-allowed;
+}
+
+select .current {
+  background-color: #8f1425;
+}
+
 /* ------------------------------------------------------
  * /css/layout/_content.scss END
  * ------------------------------------------------------ */

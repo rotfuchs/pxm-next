@@ -38,7 +38,24 @@ class UserSetupView extends View
     public $favoriteMovieGenres;
     public $favoriteMovies;
 
+    public $saveCookie;
+    public $skinId;
+    public $threadListSort;
+    public $privateMail;
+    public $privateNotification;
+    public $showImages;
+    public $showSmilies;
+    public $showSignatues;
+    public $visible;
+
+    public $popupOnlineList;
+    public $showUserProfileInfos;
+    public $topFrameSize;
+    public $bottomFrameSize;
+    public $frameView;
     public $userLayout;
+    public $listView;
+    public $shortTopic;
 
     public $layout = 'layout.user.profile';
 
@@ -49,7 +66,7 @@ class UserSetupView extends View
         $this->username = $user->nickname;
         $this->firstName = $user->firstname;
         $this->lastName = $user->lastname;
-        $this->email = $user->privatemail;
+        $this->email = $user->publicmail;
         $this->city = $user->city;
         $this->year = $user->profile_jahrgang;
         $this->job = $user->profile_beruf;
@@ -71,7 +88,24 @@ class UserSetupView extends View
         $this->favoriteMovieGenres = $user->profile_liebfgenre;
         $this->favoriteMovies = $user->profile_liebfilme;
 
+        $this->saveCookie = (strlen($user->ticket)>0);
+        $this->skinId = $user->skinid;
+        $this->threadListSort = $user->threadlistsort;
+        $this->privateMail = $user->privatemail;
+        $this->privateNotification = ($user->privatenotification);
+        $this->showImages = ($user->parseimg);
+        $this->showSmilies = ($user->replacetext);
+        $this->showSignatues = ($user->showsignatures);
+        $this->visible = ($user->visible);
+
+        $this->popupOnlineList = ($user->onlinelist);
+        $this->showUserProfileInfos = ($user->showstatus);
+        $this->topFrameSize = $user->frame_top;
+        $this->bottomFrameSize = $user->frame_bottom;
+        $this->frameView = $user->frameview;
         $this->userLayout = $user->layout;
+        $this->listView = ($user->listpunkte);
+        $this->shortTopic = ($user->txtlngak);
     }
 
     public function setVisibleTab($name)
