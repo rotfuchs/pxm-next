@@ -36,7 +36,7 @@
 }
 
 .navigation-row .item a:hover {
-  color: #f0888a;
+  color: var(--quote-text-color);
 }
 
 .navigation-row .item:nth-child(n+2):before {

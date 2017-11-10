@@ -77,7 +77,7 @@ div.message div.content .messageBody {
 }
 
 div.messageBody span.quote {
-  color: #f0888a;
+  color: var(--quote-text-color);
 }
 
 /* ------------------------------------------------------

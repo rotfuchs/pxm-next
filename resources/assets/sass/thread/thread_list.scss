@@ -87,7 +87,7 @@ table.threads .replyCount a {
 
 table.threads td.topic a:visited,
 table.threads td.lastMsg a:visited {
-  color: #f0888a;
+  color: var(--quote-text-color);
 }
 
 table.threads td.topic a.unread,

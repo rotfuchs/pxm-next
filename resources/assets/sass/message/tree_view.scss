@@ -37,7 +37,7 @@
 }
 
 .messageTree li a.subject:visited {
-  color: #f0888a;
+  color: var(--quote-text-color);
 }
 
 .messageTree li a.subject:active {
