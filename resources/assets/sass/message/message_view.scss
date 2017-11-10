@@ -16,7 +16,7 @@ div.message .created {
 }
 
 div.message .created a {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 div.message .topic span,
@@ -30,8 +30,8 @@ div.secondMessageFoot {
   padding: 4px 14px;
   font-size: small;
   font-weight: bold;
-  background-color: #8f1425;
-  border: 1px solid #c01425;
+  background-color: var(--bg-color-two);
+  border: 1px solid var(--table-line-color);
 }
 
 div.message .replyInfo {
@@ -51,13 +51,13 @@ div.message .replyInfo span {
 
 div.message div.content {
   display: flex;
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.message div.content .userInfo {
-  background-color: #8f1425;
-  border-right: 1px solid #c01425;
-  border-left: 1px solid #c01425;
+  background-color: var(--bg-color-two);
+  border-right: 1px solid var(--table-line-color);
+  border-left: 1px solid var(--table-line-color);
   width: 160px;
   padding: 4px;
 }

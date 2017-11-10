@@ -9,13 +9,21 @@
 
 body {
   background-color: #AD2C39;
-  color: #ffffff;
+  color: var(--default-text-color);
   font-family: Verdana, Arial, sans-serif;
   font-size: 10px;
 }
 
+body {
+  --default-text-color: #ffffff;
+  --highlight-text-color: #ffff7c;
+  --table-line-color: #c01425;
+  --bg-color-one: #A51425;
+  --bg-color-two: #8f1425;
+}
+
 a, a:active {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   text-decoration: none;
   cursor: pointer;
 }

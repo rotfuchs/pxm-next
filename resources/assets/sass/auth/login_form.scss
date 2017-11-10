@@ -12,11 +12,11 @@
 }
 
 .loginContainer .formContainer form div {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 .loginContainer .formContainer .formElements {
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
   font-size: small;
   font-weight: bold;
   text-align: center;
@@ -41,7 +41,7 @@
 
 .loginContainer .loginFooter,
 .loginContainer .formContainer {
-  border: 1px solid #c01425;
+  border: 1px solid var(--table-line-color);
   border-top: 0;
 }
 
@@ -61,12 +61,12 @@
 }
 
 .loginContainer .loginInfo {
-  background-color: #8f1425;
-  border-bottom: 1px solid #c01425;
+  background-color: var(--bg-color-two);
+  border-bottom: 1px solid var(--table-line-color);
   font-size: small;
   font-weight: bold;
   text-align: center;
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   padding: 4px 0 6px 0;
 }
 

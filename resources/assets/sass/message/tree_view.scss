@@ -3,16 +3,16 @@
  * ------------------------------------------------------ */
 
 .messageTree {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 .messageTree div.defaultHeader {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   position: relative;
 }
 
 .messageTree div.defaultHeader a {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 .messageTree li span.username {
@@ -21,7 +21,7 @@
 
 .messageTree li a.subject {
   font-size: 12px;
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 .messageTree li a.subject:focus {
@@ -32,7 +32,7 @@
   margin-left: -11px;
   line-height: inherit;
   z-index: 9999;
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   position: absolute;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .messageTree li a.subject:active {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   text-decoration: underline;
 }
 
@@ -55,7 +55,7 @@
   margin: 0 0 0 14px; /* indentation */
   padding: 0;
   list-style:none;
-  color: #ffffff;
+  color: var(--default-text-color);
   position:relative;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .tree li:last-child:before {
-  background: #8f1425; /* same with body background */
+  background: var(--bg-color-two); /* same with body background */
   height:auto;
   top: 16px; /* (line-height/2) */
   bottom:0;

@@ -19,32 +19,32 @@ div.userSetupContainer .tabHeader .tab {
 }
 
 div.userSetupContainer .tabHeader .tab:nth-child(1) {
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .tabHeader .tab:nth-child(3) {
-  border-left: 1px solid #c01425;
+  border-left: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .tabHeaderAddon {
-  border: 1px solid #c01425;
+  border: 1px solid var(--table-line-color);
   border-top: 0;
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
   height: 12px;
 }
 
 div.userSetupContainer form .defaultHeader {
   text-align: center;
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   border-top: 0;
   border-bottom: 0;
 }
 
 div.userSetupContainer .row {
   display: flex;
-  border: 1px solid #c01425;
+  border: 1px solid var(--table-line-color);
   border-top: 0;
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 
   font-size: small;
   font-weight: bold;
@@ -63,26 +63,26 @@ div.userSetupContainer .row .info {
 div.userSetupContainer .row .firstlabel {
   width: 200px;
   text-align: right;
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .row .pwLabel {
   width: 50%;
   text-align: right;
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .row .extraslabel {
   width: 385px;
   text-align: right;
-  border-right: 1px solid #c01425;
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .row .secLabel {
   width: 100px;
   text-align: right;
-  border-left: 1px solid #c01425;
-  border-right: 1px solid #c01425;
+  border-left: 1px solid var(--table-line-color);
+  border-right: 1px solid var(--table-line-color);
 }
 
 div.userSetupContainer .row .option {
@@ -139,7 +139,7 @@ div.userSetupContainer .extrasContainer.visible {
 /* tabs */
 div.userSetupContainer .tab a.visible,
 div.userSetupContainer .tab a.visible:hover {
-  color: #ffffff;
+  color: var(--default-text-color);
   text-decoration: none;
 }
 

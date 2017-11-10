@@ -60,7 +60,7 @@
     </div>
     <div class="row">
         <div class="extraslabel">
-            Smilies als Grafiken anzeigen?
+            <a href="/faq#smilies" target="_blank">Smilies</a> als Grafiken anzeigen?
         </div>
         <div class="option">
             <input type="hidden" name="showSmilies" value="0" />
@@ -78,7 +78,7 @@
     </div>
     <div class="row">
         <div class="extraslabel">
-            Eigenen User in Online-Liste anzeigen?
+            Eigenen User in <a href="/useronline" target="_blank">Online-Liste</a> anzeigen?
         </div>
         <div class="option">
             <input type="hidden" name="visible" value="0" />

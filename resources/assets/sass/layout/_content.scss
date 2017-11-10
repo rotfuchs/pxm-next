@@ -5,7 +5,7 @@
 div.defaultHeader {
   height: 30px;
   padding: 4px;
-  border: 1px solid #c01425;
+  border: 1px solid var(--table-line-color);
   box-sizing: border-box;
   font-size: small;
   font-weight: bold;
@@ -21,7 +21,7 @@ div.defaultHeader {
 }
 
 .defaultHeader .icon-arrow-right {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   font-size: 10px;
 }
 
@@ -42,7 +42,7 @@ div.defaultHeader {
 }
 
 .highlight {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
 }
 
 .noDisplay {
@@ -53,17 +53,17 @@ select {
   width: 150px;
   font-size: 8pt;
   font-weight: bold;
-  color: #ffffff;
-  background-color: #c01425;
+  color: var(--default-text-color);
+  background-color: var(--table-line-color);
 }
 
 select:disabled {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
   cursor: not-allowed;
 }
 
 select .current {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 /* ------------------------------------------------------

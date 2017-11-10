@@ -3,7 +3,7 @@
  * ------------------------------------------------------ */
 
 div.profilePopupContainer {
-  background-color: #A51425;
+  background-color: var(--bg-color-one);
   width: 100vw;
   height: 100vh;
   padding: 10px 20px 0 20px;
@@ -16,23 +16,23 @@ div.profilePopupContainer table {
 
 div.userprofile.headline {
   text-align: center;
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   font-size: medium;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
 div.userprofile.headline span {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 table.userprofile tbody.general tr:nth-child(odd) {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 table.userprofile tbody.games tr:nth-child(even),
 table.userprofile tbody.movies tr:nth-child(even) {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 table.userprofile th {
@@ -67,7 +67,7 @@ table.userprofile tbody th {
 
 table.userprofile tfoot td {
   text-align: center;
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 table.userprofile tfoot span.label {

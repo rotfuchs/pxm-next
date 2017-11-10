@@ -19,17 +19,17 @@
 //}
 //
 //form.switchBoardForm select .current {
-//  background-color: #8f1425;
+//  background-color: var(--bg-color-two);
 //}
 
 table.threads thead th {
-  color: #ffffff;
+  color: var(--default-text-color);
   font-size: x-small;
   padding: 4px;
 }
 
 table.threads tbody tr:hover {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 table.threads tbody tr:hover td {
@@ -43,7 +43,7 @@ table.threads td {
 table.threads td.author,
 table.threads td.viewCount,
 table.threads td.replyCount {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
   font-weight: bold;
 }
 
@@ -82,7 +82,7 @@ table.threads td.topic a,
 table.threads td.author a,
 table.threads .lastMsg a,
 table.threads .replyCount a {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 table.threads td.topic a:visited,
@@ -92,21 +92,21 @@ table.threads td.lastMsg a:visited {
 
 table.threads td.topic a.unread,
 table.threads td.lastMsg a.unread {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 table.threads td.topic a:active,
 table.threads td.lastMsg a:active {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   text-decoration: underline;
 }
 
 table.threads td.topic a.fixed {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
 }
 
 table.threads tfoot td {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
   font-weight: bold;
   padding: 5px;
 }
@@ -120,7 +120,7 @@ table.threads tfoot td.info {
 }
 
 table.threads tfoot td.info span.category {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
 }
 
 /* ------------------------------------------------------

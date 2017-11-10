@@ -8,20 +8,20 @@ table.default {
 }
 
 table.default thead {
-  background-color: #8f1425;
-  color: #ffff7c;
+  background-color: var(--bg-color-two);
+  color: var(--highlight-text-color);
   line-height: normal;
 }
 
 table.default tbody {
-  background-color: #a51425;
+  background-color: var(--bg-color-one);
 }
 
 table.default th,
 table.default td {
   padding: 5px;
   font-size: x-small;
-  border: 1px solid #c01425;
+  border: 1px solid var(--table-line-color);
 }
 
 /* ------------------------------------------------------

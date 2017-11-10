@@ -31,7 +31,7 @@
 
 .searchContainer .searchRow .searchFieldAddon {
   padding-left: 12px;
-  border-left: 1px solid #c01425;
+  border-left: 1px solid var(--table-line-color);
 }
 
 .searchContainer .searchRow .searchFieldAddon input[type="checkbox"]  {
@@ -52,11 +52,11 @@
 .searchContainer .searchRow,
 .searchContainer .footer {
 
-  border-bottom: 1px solid #c01425;
+  border-bottom: 1px solid var(--table-line-color);
 }
 
 .searchContainer .footer {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
   padding: 6px 4px 8px 4px;
   font-size: x-small;
   font-weight: bold;

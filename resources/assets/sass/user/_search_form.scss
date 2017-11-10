@@ -4,8 +4,8 @@
 
 .userSearchContainer .userSearchForm {
   display: flex;
-  border-left: 1px solid #c01425;
-  border-right: 1px solid #c01425;
+  border-left: 1px solid var(--table-line-color);
+  border-right: 1px solid var(--table-line-color);
 }
 
 .userSearchContainer .userSearchForm .form {
@@ -23,7 +23,7 @@
 }
 
 .userSearchContainer .userSearchForm .button {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 .userSearchContainer .userSearchForm .input {
@@ -34,15 +34,15 @@
 .userSearchContainer .userSearchForm .input,
 .userSearchContainer .userSearchForm .button {
   text-align: right;
-  border-bottom: 1px solid #c01425;
+  border-bottom: 1px solid var(--table-line-color);
   padding: 10px 0 0 0;
   height: 45px;
   box-sizing: border-box;
 }
 
 .userSearchContainer .userSearchForm .help {
-  border-left: 1px solid #c01425;
-  border-bottom: 1px solid #c01425;
+  border-left: 1px solid var(--table-line-color);
+  border-bottom: 1px solid var(--table-line-color);
   height: 90px;
   box-sizing: border-box;
   padding-left: 10px;
@@ -55,7 +55,7 @@
 }
 
 .userSearchContainer .userSearchForm .help .headline {
-  color: #ffff7c;
+  color: var(--highlight-text-color);
   font-weight: bold;
 }
 

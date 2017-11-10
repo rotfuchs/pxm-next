@@ -18,8 +18,8 @@
 }
 
 .faqContainer .category .headline2 {
-  background-color: #8f1425;
-  border: 1px solid #C01425;
+  background-color: var(--bg-color-two);
+  border: 1px solid var(--table-line-color);
   padding: 22px 8px;
   font-size: 12px;
   text-transform: uppercase;
@@ -31,16 +31,16 @@
   font-size: 12px;
   font-weight: bold;
   padding: 5px 10px;
-  color: #ffff7c;
-  background-color: #A51425;
+  color: var(--highlight-text-color);
+  background-color: var(--bg-color-one);
 }
 
 .faqContainer .topic {
-  background-color: #8f1425;
+  background-color: var(--bg-color-two);
 }
 
 .faqContainer .topic .content {
-  border: 1px solid #C01425;
+  border: 1px solid var(--table-line-color);
   padding: 6px 10px;
   font-size: 12px;
 }

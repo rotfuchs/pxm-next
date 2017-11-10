@@ -10,7 +10,7 @@
 .header .banner {
   width: 100%;
   height: 60px;
-  background-color: #E5E5E5;
+  background-color: var(--default-text-color);
 }
 
 .header .top-navigation {
@@ -32,7 +32,7 @@
 }
 
 .navigation-row .item a {
-  color: #ffffff;
+  color: var(--default-text-color);
 }
 
 .navigation-row .item a:hover {
