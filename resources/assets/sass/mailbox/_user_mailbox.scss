@@ -1,0 +1,73 @@
+/* ------------------------------------------------------
+ * /css/mailbox/_user_mailbox.scss START
+ * ------------------------------------------------------ */
+
+div.userMailboxContainer {
+  margin: 0 10px;
+  min-width: 615px;
+}
+
+div.userMailboxContainer .defaultHeader.tabHeader {
+  display: flex;
+  padding: 0;
+}
+
+div.userMailboxContainer .tabHeader .tab {
+  flex: 1;
+  text-align: center;
+  padding: 4px;
+}
+
+div.userMailboxContainer .tabHeader .tab:nth-child(1) {
+  border-right: 1px solid var(--table-line-color);
+}
+
+div.userMailboxContainer .tabHeader .tab:nth-child(3) {
+  border-left: 1px solid var(--table-line-color);
+}
+
+div.userMailboxContainer .tabHeaderAddon {
+  border: 1px solid var(--table-line-color);
+  border-top: 0;
+  background-color: var(--bg-color-two);
+  height: 12px;
+}
+
+div.userMailboxContainer form .defaultHeader {
+  text-align: center;
+  color: var(--highlight-text-color);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+div.userMailboxContainer .profileContainer.visible,
+div.userMailboxContainer .passwordContainer.visible,
+div.userMailboxContainer .extrasContainer.visible {
+  display: block;
+}
+
+/* tabs */
+div.userMailboxContainer .tab a.visible,
+div.userMailboxContainer .tab a.visible:hover {
+  color: var(--default-text-color);
+  text-decoration: none;
+}
+
+table.mailbox .checkbox {
+  width: 32px;
+}
+
+table.mailbox .author,
+table.mailbox .created,
+table.mailbox .replyCount,
+table.mailbox .lastReply {
+  width: 100px;
+}
+
+table.mailbox .replyCount {
+  width: 28px;
+}
+
+/* ------------------------------------------------------
+ * /css/mailbox/_user_mailbox.scss END
+ * ------------------------------------------------------ */

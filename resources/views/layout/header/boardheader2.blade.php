@@ -23,7 +23,7 @@
                 <a href="/user/setup">Setup</a>
             </div>
             <div class="item">
-                <a href="">Mailbox</a>
+                <a href="/mailbox" target="_blank">Mailbox</a>
             </div>
             @endif
 

@@ -50,6 +50,10 @@ Route::get('/user/id/{user_id}/layout/{layout}', 'UserController@getUserView');
 Route::get('/user/id/{user_id}', 'UserController@getUserView');
 Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');
 
+Route::get('/mailbox/tab/{tab}', 'MailboxController@getMailboxTabView');
+Route::get('/mailbox/{layout?}', 'MailboxController@getMailboxView');
+
+
 
 //Route::get('/user/login', 'sx\AuthController@getLoginView');
 //Route::get('/user/logout', 'sx\AuthController@getLogoutView');
