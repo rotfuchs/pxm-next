@@ -70,6 +70,11 @@ class User extends Model implements Authenticatable
     public $profile_psn;
     public $profile_wii;
 
+    public function isAdmin()
+    {
+        return ($this->admin==1 && in_array($this->id, \Config::get('user.admin_user_ids')));
+    }
+
     public function getFullName()
     {
         return $this->firstname .' '. $this->lastname;

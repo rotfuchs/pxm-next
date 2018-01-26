@@ -31,6 +31,12 @@
                 <a href="/useronline">Online?</a>
             </div>
 
+            @if($isAdmin)
+            <div class="item">
+                <a href="/admin/dashboard">Admin</a>
+            </div>
+            @endif
+
             @if($isUserLoggedIn)
             <div class="item">
                 <a href="/user/logout">Logout</a>

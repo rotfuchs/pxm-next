@@ -53,7 +53,9 @@ Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');
 Route::get('/mailbox/tab/{tab}', 'MailboxController@getMailboxTabView');
 Route::get('/mailbox/{layout?}', 'MailboxController@getMailboxView');
 
+Route::get('/admin/dashboard', 'AdminController@getDashboardView');
 
+Route::get('/custom/assets{filePath?}', 'ScriptRouterController@getAssetFile')->where('filePath', '(.*)');
 
 //Route::get('/user/login', 'sx\AuthController@getLoginView');
 //Route::get('/user/logout', 'sx\AuthController@getLogoutView');
