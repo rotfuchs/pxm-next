@@ -53,7 +53,41 @@ Route::get('/user/get-user-search-form-json', 'UserController@getSearchJson');
 Route::get('/mailbox/tab/{tab}', 'MailboxController@getMailboxTabView');
 Route::get('/mailbox/{layout?}', 'MailboxController@getMailboxView');
 
-Route::get('/admin/dashboard', 'AdminController@getDashboardView');
+Route::group(['middleware' => ['active_admin_menu:dashboard']], function()
+{
+    Route::get('/admin/dashboard', 'AdminController@getDashboardView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:settings']], function()
+{
+    Route::get('/admin/settings', 'AdminController@getSettingsView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:boards']], function()
+{
+    Route::get('/admin/boards', 'AdminController@getBoardsView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:translation']], function()
+{
+    Route::get('/admin/translations', 'AdminController@getTranslationView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:template']], function()
+{
+    Route::get('/admin/templates', 'AdminController@getTemplatesView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:smilies']], function()
+{
+    Route::get('/admin/smilies', 'AdminController@getSmiliesView');
+});
+
+Route::group(['middleware' => ['active_admin_menu:user']], function()
+{
+    Route::get('/admin/user', 'AdminController@getUserView');
+});
+
 
 Route::get('/custom/assets{filePath?}', 'ScriptRouterController@getAssetFile')->where('filePath', '(.*)');
 
