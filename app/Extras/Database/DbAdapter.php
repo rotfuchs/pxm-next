@@ -35,9 +35,20 @@ class DbAdapter
             return $classDefinition::hydrate($statement->get()->toArray());
         }
 
-        $std = $this->pdo->prepare($statement);
+        $std = $this->pdo->prepare($statement->toSql());
         $std->execute();
 
         return $std->fetchAll(\PDO::FETCH_CLASS, $classDefinition);
+    }
+
+    /**
+     * @param \Illuminate\Database\Query\Builder|string $statement
+     * @return mixed
+     */
+    public function fetchRow($statement) {
+        $std = $this->pdo->prepare($statement->toSql());
+        $std->execute();
+
+        return $std->fetch(\PDO::FETCH_ASSOC);
     }
 }

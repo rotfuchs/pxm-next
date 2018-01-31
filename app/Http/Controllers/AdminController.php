@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Menu\View\Admin\MenuPaginationView;
+use App\Services\User\View\Admin\UserAdminTableView;
+use Illuminate\Support\Facades\Request;
+
 class AdminController extends Controller
 {
     //
@@ -37,6 +41,15 @@ class AdminController extends Controller
 
     public function getUserView()
     {
-        return view('admin.user', []);
+        $userTable = new UserAdminTableView();
+        $userTable->setPageNumber(Request::get('page'));
+
+        $pagination = new MenuPaginationView();
+        $pagination->setCurrentPage(Request::get('page'));
+
+        return view('admin.user', [
+            'table' => $userTable,
+            'pagination' => $pagination
+        ]);
     }
 }

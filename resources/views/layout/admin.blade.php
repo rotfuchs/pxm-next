@@ -15,7 +15,10 @@
     <!-- Admin CSS -->
     <link href="/custom/assets/css/admin/dashboard.css" rel="stylesheet">
 
+    <script src="/custom/assets/js/jquery/jquery.min.js"></script>
+    <script src="/custom/assets/js/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <!--@todo put feather.min.js in js folder -->
 
 
 </head>

@@ -9,4 +9,8 @@
             </div>
         </div>
     </div>
+
+    {!! $table !!}
+
+    {!! $pagination !!}
 @endsection

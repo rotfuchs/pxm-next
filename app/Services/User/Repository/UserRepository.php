@@ -37,6 +37,15 @@ class UserRepository
                     ->addSelect('pxm_moderator.board_id');
             }
 
+            if(is_numeric($filter->limit) && $filter->limit>0)
+                $select = $select->limit($filter->limit);
+
+            if(is_numeric($filter->offset) && $filter->offset>0)
+                $select = $select->offset($filter->offset);
+
+            if(strlen($filter->orderField)>0)
+                $select = $select->orderBy($filter->orderField, (strtolower($filter->orderSort)=='asc') ? 'asc' : 'desc');
+
             return $this->db->fetchAll($select, User::class);
 
         } catch(\Exception $e) {
@@ -66,6 +75,24 @@ class UserRepository
 
                 return (is_numeric($user->id) && $user->id>0);
             }
+
+        } catch(\Exception $e) {
+            $this->messageCollector->writeError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    public function count()
+    {
+        try {
+            $select = $this->db
+                ->table('pxm_user')
+                ->select(\DB::raw('count(pxm_user.id) as userCount'));
+
+            $result = $this->db->fetchRow($select);
+
+            return (isset($result['userCount'])) ? $result['userCount'] : -1;
 
         } catch(\Exception $e) {
             $this->messageCollector->writeError($e->getMessage());

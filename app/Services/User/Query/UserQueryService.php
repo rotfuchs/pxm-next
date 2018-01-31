@@ -33,4 +33,9 @@ class UserQueryService
 
         return $userList[0];
     }
+
+    public function count()
+    {
+        return $this->userRepository->count();
+    }
 }
