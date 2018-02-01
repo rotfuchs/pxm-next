@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Menu\View\Admin\MenuPaginationView;
+use App\Services\Setting\View\Admin\SmilieAdminTableView;
 use App\Services\User\View\Admin\UserAdminTableView;
 use Illuminate\Support\Facades\Request;
 
@@ -36,7 +37,11 @@ class AdminController extends Controller
 
     public function getSmiliesView()
     {
-        return view('admin.smilies', []);
+        $smilieTable = new SmilieAdminTableView();
+
+        return view('admin.smilies', [
+            'table' => $smilieTable
+        ]);
     }
 
     public function getUserView()
