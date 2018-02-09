@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Board\Query\BoardQueryService;
+use App\Services\Board\View\Admin\BoardsAdminEditorView;
+use App\Services\Board\View\Admin\BoardsAdminTableView;
 use App\Services\Menu\View\Admin\MenuPaginationView;
 use App\Services\Setting\View\Admin\SmilieAdminTableView;
+use App\Services\Template\View\Admin\TemplateAdminTableView;
 use App\Services\User\View\Admin\UserAdminTableView;
 use Illuminate\Support\Facades\Request;
 
@@ -22,17 +26,36 @@ class AdminController extends Controller
 
     public function getBoardsView()
     {
-        return view('admin.boards', []);
+        $boardsTableView = new BoardsAdminTableView();
+
+        return view('admin.boards', [
+            'table' => $boardsTableView
+        ]);
     }
 
-    public function getTranslationView()
+    public function getBoardEditorView($id)
     {
-        return view('admin.translations', []);
+        $boardQueryService = \App::make(BoardQueryService::class);
+        $board = $boardQueryService->getSingle($id);
+
+        $boardEditorView = new BoardsAdminEditorView();
+        $boardEditorView->setBoard($board);
+
+        return $boardEditorView;
     }
+
+//    public function getTranslationView()
+//    {
+//        return view('admin.translations', []);
+//    }
 
     public function getTemplatesView()
     {
-        return view('admin.templates', []);
+        $templatesTable = new TemplateAdminTableView();
+
+        return view('admin.templates', [
+            'table' => $templatesTable
+        ]);
     }
 
     public function getSmiliesView()

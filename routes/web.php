@@ -65,6 +65,7 @@ Route::group(['middleware' => ['active_admin_menu:settings']], function()
 
 Route::group(['middleware' => ['active_admin_menu:boards']], function()
 {
+    Route::get('/admin/boards/edit/{id}', 'AdminController@getBoardEditorView');
     Route::get('/admin/boards', 'AdminController@getBoardsView');
 });
 

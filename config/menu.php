@@ -17,11 +17,11 @@ return [
             'name' => 'Boards',
             'url' => '/admin/boards',
             'icon' => 'list'
-        ], [
-            'id' => 'translation',
-            'name' => 'Sprache',
-            'url' => '/admin/translations',
-            'icon' => 'type'
+//        ], [
+//            'id' => 'translation',
+//            'name' => 'Sprache',
+//            'url' => '/admin/translations',
+//            'icon' => 'type'
         ], [
             'id' => 'templates',
             'name' => 'Templates',
