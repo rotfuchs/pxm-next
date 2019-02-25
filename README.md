@@ -1,29 +1,14 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A complete rewrite of the famous [PXMBoard](https://sourceforge.net/projects/pxmboard)
 
-### What is this repository for? ###
+Unfortunately the software isn't done yet. There a missing lots of important functions - see ToDO.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### ToDo ###
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Write post editor to add, edit and delete forum posts
+* Write search function
+* Cleaning up Javascript code
+* Build installer for easy setup
+* Write Documentation
+* Cleaning up README
